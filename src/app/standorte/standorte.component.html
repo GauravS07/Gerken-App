@@ -1,0 +1,147 @@
+<div class="account">
+  <!-- title -->
+  <div class="module red">
+    <div class="inner title">
+      <h1>Baustellen/Standorte</h1>
+      <div style="clear:both;"><div></div></div>
+    </div>
+
+    <div style="clear:both;"><div></div></div>
+  </div>
+
+  <ng-template [ngIf]="eingeloggt">
+    <!-- Modals-->
+    <div class="modal" id="id_modal_adress" style="display: none;">
+      <h3 id="new_title">Standort anlegen</h3>
+
+      <form onsubmit="event.preventDefault();">
+        <label>Name</label>
+        <input
+          type="text"
+          name="xxx"
+          placeholder="Standort 1"
+          required="required"
+          id="new_name"
+        />
+
+        <label>Str./Nr.*</label>
+        <input
+          type="email"
+          name="xxx"
+          placeholder="Musterstr. 11"
+          required="required"
+          id="new_strasse"
+        />
+
+        <div class="form-left">
+          <label>PLZ*</label>
+          <input
+            type="email"
+            name="xxx"
+            placeholder="11111"
+            required="required"
+            id="new_plz"
+            maxlength="5"
+            (input)="reconf('new_plz', 'new_ort', 'new_land')"
+          />
+        </div>
+
+        <div class="form-right">
+          <label>Ort*</label>
+          <input
+            type="email"
+            name="xxx"
+            placeholder="Musterstadt"
+            required="required"
+            id="new_ort"
+          />
+        </div>
+
+        <label>Land</label>
+        <select id="new_land">
+          <option>Deutschland</option>
+          <option>Belgien</option>
+          <option>Niederlande</option>
+        </select>
+
+        <label>Zusätzliche Information zur Adresse</label>
+        <textarea id="new_zusatz"></textarea>
+
+        <input type="hidden" id="new_id" value="" />
+        <input type="hidden" id="new_aktive" value="" />
+        <div class="centered space">
+          <input
+            type="submit"
+            name="submit"
+            value="Speichern"
+            (click)="saveStandort()"
+          />
+        </div>
+      </form>
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+
+    <div class="modal" id="id_modal_delete" style="display: none;">
+      <h3>Sind Sie sich sicher, dass Sie diesen Standort löschen möchten?</h3>
+
+      <form onsubmit="event.preventDefault();">
+        <div class="centered space">
+          <input
+            type="submit"
+            name="submit"
+            value="Ja"
+            id="approve"
+            data-src=""
+            (click)="deleteStandort()"
+          />
+
+          <input
+            type="submit"
+            name="submit"
+            value="Nein"
+            (click)="closeStandort()"
+          />
+        </div>
+      </form>
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+    <!-- Modals End-->
+  </ng-template>
+  <!--Standorte-->
+  <div class="inner inner-intended">
+    <div id="standorte">
+      <div class="adress-box">
+        <p>
+          Test Empfänger<br />
+          Teststr. 11<br />
+          11111 Testdort<br />
+          <strong>Aktive Geräte: 42</strong>
+        </p>
+
+        <a href="#" class="edit"><span>Edit</span></a>
+
+        <a href="#" class="delete"><span>Delete</span></a>
+
+        <div style="clear:both;"><div></div></div>
+      </div>
+    </div>
+
+    <div style="clear:both;"><div></div></div>
+
+    <div class="centered">
+      <a (click)="newStandort()" class="btn btn-outline"
+        >Neuen Standort anlegen</a
+      >
+    </div>
+
+    <div style="clear:both;"><div></div></div>
+  </div>
+  <div style="display:none">
+    <img
+      src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/product.jpg"
+      (load)="onload()"
+    />
+  </div>
+</div>

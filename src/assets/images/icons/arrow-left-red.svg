@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Group 8 Copy</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="01_Startseite" transform="translate(-733.000000, -2288.000000)">
+            <g id="Group-14" transform="translate(240.000000, 2200.000000)">
+                <g id="Group-3-Copy" transform="translate(82.000000, 88.000000)">
+                    <g id="Group-8-Copy" transform="translate(423.000000, 12.000000) rotate(-180.000000) translate(-423.000000, -12.000000) translate(411.000000, 0.000000)">
+                        <circle id="Oval" fill="#E3000F" cx="12" cy="12" r="12"></circle>
+                        <g id="arrow" transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000) translate(7.000000, 9.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                            <polygon id="Path" points="5 6 0 1.04483247 1.05418367 1.36424205e-13 5 3.91053732 8.94581633 1.36424205e-13 10 1.04483247"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

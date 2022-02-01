@@ -1,0 +1,243 @@
+<!--MODAL-->
+
+<div class="modal" id="id_modal_info">
+  <h3>Lorem ipsum dolor sit amet</h3>
+
+  <p>
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+    voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+    clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+    amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+    diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+    clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+    amet.
+  </p>
+
+  <div style="clear:both;"><div></div></div>
+</div>
+
+<!-- title -->
+<div class="module red">
+  <div class="inner title">
+    <h1>Aktuelle Mietobjekte</h1>
+
+    <div style="clear:both;"><div></div></div>
+  </div>
+
+  <div style="clear:both;"><div></div></div>
+</div>
+
+<!-- content -->
+<div id="id_content">
+  <!-- module -->
+  <div class="module red">
+    <div class="inner">
+      <div class="product">
+        <div class="product-image">
+          <img
+            src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/product.jpg"
+          />
+        </div>
+
+        <div class="product-text">
+          <p>
+            <strong>Lorem ipsum dolor sit amet, consetetur sadipscing</strong
+            ><br />
+            Sed diam nonumy eirmod tempor invidunt ut labore et dolore
+          </p>
+        </div>
+
+        <div class="product-actions">
+          <a [routerLink]="['/produktdetailseite']" class="btn">Details</a>
+
+          <a [routerLink]="['/mietprozess', 'miethistorie']" class="btn"
+            >Erneut mieten</a
+          >
+        </div>
+      </div>
+
+      <div class="product">
+        <div class="product-image">
+          <img
+            src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/product.jpg"
+          />
+        </div>
+
+        <div class="product-text">
+          <p>
+            <strong>Lorem ipsum dolor sit amet, consetetur sadipscing</strong
+            ><br />
+            Sed diam nonumy eirmod tempor invidunt ut labore et dolore
+          </p>
+        </div>
+
+        <div class="product-actions">
+          <a [routerLink]="['/produktdetailseite']" class="btn">Details</a>
+
+          <a [routerLink]="['/mietprozess', 'miethistorie']" class="btn"
+            >Erneut mieten</a
+          >
+        </div>
+      </div>
+
+      <div class="more-wrapper">
+        <a href="#" (click)="loadmore('now')" class="more">Alle anzeigen</a>
+      </div>
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+  </div>
+  <!-- module end -->
+
+  <div class="module darkgrey">
+    <div class="inner title">
+      <a
+        data-fancybox
+        data-src="#id_modal_info"
+        data-options='{"touch" : false}'
+        href="javascript:void(0);"
+        class="help"
+        >Hilfe bei Problemen</a
+      >
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+
+    <div style="clear:both;"><div></div></div>
+  </div>
+
+  <!-- module -->
+  <div class="module lightgrey">
+    <div class="inner">
+      <h2>Ihre Miethistorie</h2>
+
+      <div class="product">
+        <div class="product-image">
+          <img
+            src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/product.jpg"
+          />
+        </div>
+
+        <div class="product-text">
+          <p>
+            <strong>Lorem ipsum dolor sit amet, consetetur sadipscing</strong
+            ><br />
+            Sed diam nonumy eirmod tempor invidunt ut labore et dolore
+          </p>
+        </div>
+
+        <div class="product-actions">
+          <a href="#" class="btn">Details</a>
+
+          <a href="#" class="btn">Erneut mieten</a>
+        </div>
+      </div>
+
+      <div class="product">
+        <div class="product-image">
+          <img
+            src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/product.jpg"
+          />
+        </div>
+
+        <div class="product-text">
+          <p>
+            <strong>Lorem ipsum dolor sit amet, consetetur sadipscing</strong
+            ><br />
+            Sed diam nonumy eirmod tempor invidunt ut labore et dolore
+          </p>
+        </div>
+
+        <div class="product-actions">
+          <a href="#" class="btn">Details</a>
+
+          <a href="#" class="btn">Erneut mieten</a>
+        </div>
+      </div>
+
+      <div class="more-wrapper">
+        <a href="#" (click)="loadmore('past')" class="more">Alle anzeigen</a>
+      </div>
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+  </div>
+  <!-- module end -->
+
+  <div class="module centered red">
+    <div class="inner title">
+      <a class="btn">Neues Produkt finden</a>
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+
+    <div style="clear:both;"><div></div></div>
+  </div>
+
+  <!-- image -->
+  <div class="module full">
+    <img
+      src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/image.jpg"
+      alt="image"
+      width=""
+      height=""
+    />
+  </div>
+  <!-- image end -->
+
+  <!-- image -->
+  <div class="module black">
+    <div class="inner inner-intended">
+      <div class="left">
+        <div class="inner-small">
+          <h3>Newsletter</h3>
+
+          <p>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+            erat, sed diam voluptua.
+          </p>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="inner-small">
+          <form>
+            <input type="email" name="email" placeholder="E-Mail" />
+
+            <div class="radio-checkbox-wrapper">
+              <label
+                >Durch Absenden dieses Formulars erklärst Du dich mit der
+                Speicherung und Verarbeitung Deiner Daten einverstanden.
+                <a href="#">Weitere Informationen zum Datenschutz</a>.
+                <input
+                  type="checkbox"
+                  name="DSGVO"
+                  value="OK"
+                  required="required"
+                />
+                <span class="checkmark checkmark-checkbox"></span>
+              </label>
+              <div style="clear:both;"><div></div></div>
+            </div>
+
+            <input type="submit" name="submit" value="Abonnieren" />
+          </form>
+        </div>
+      </div>
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+  </div>
+  <!-- image end -->
+
+  <div style="clear:both;"><div></div></div>
+</div>
+<div style="display:none">
+<img
+  src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/product.jpg"
+  (load)="onload()"
+/>
+</div>

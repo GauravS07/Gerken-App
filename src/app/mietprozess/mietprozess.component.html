@@ -1,0 +1,2616 @@
+<!-- Modals-->
+<div class="modal" id="id_modal_miethistorie" style="display: none;">
+  <div id="miethistorie_form">
+    <div class="box-head">
+      <h3>Mietdauer wählen</h3>
+    </div>
+    <div class="inner-extra-intended">
+      <form>
+        <p>Bitte wählen Sie den gewünschten Lieferzeitpunkt aus:</p>
+        <h6>Ende der Miete</h6>
+        <div id="mietende1_miethistorie">
+          <div class="left">
+            <input
+              type="date"
+              id="ende_miethistorie"
+              name="xxx"
+              placeholder="tt.mm.yyyy"
+              (change)="timeAdjust_miethistorie()"
+            />
+          </div>
+          <div class="right">
+            <input
+              type="time"
+              id="ende-zeit_miethistorie"
+              (change)="timeAdjust_miethistorie()"
+            />
+          </div>
+        </div>
+        <div style="clear:both;"><div></div></div>
+        <div class="radio-checkbox-wrapper" id="mietende2_miethistorie">
+          <label class="with-info"
+            >Ende der Miete offen
+            <a
+              data-fancybox
+              data-src="#id_modal_info_miethistorie"
+              href="javascript:void(0);"
+              class="info"
+              ><span>Info</span></a
+            >
+            <input
+              type="checkbox"
+              name="xxx"
+              value="OK"
+              id="the_end_miethistorie"
+              (change)="timeAdjust_miethistorie()"
+            />
+            <span class="checkmark checkmark-checkbox"></span>
+          </label>
+          <div style="clear:both;"><div></div></div>
+        </div>
+        <a href="javascript:$.fancybox.close();" class="btn">Speichern</a>
+      </form>
+    </div>
+    <div class="info-box" id="hinweis_miethistorie" style="display:none">
+      <h6>Hinweis</h6>
+      <p>
+        Innerhalb Ihres angegebenen Mietzeitraumes befinden sich ein oder
+        mehrere Wochenenden (Feiertage) - Möchten Sie das Gerät auch am
+        Wochenende (Feiertag) nutzen?
+      </p>
+      <div class="radio-checkbox-wrapper">
+        <label
+          >Nutzung auch am Wochenende
+          <input
+            type="checkbox"
+            name="xxx"
+            value="OK"
+            id="hinweis_check_miethistorie"
+            (change)="timeAdjust_miethistorie()"
+          />
+          <span class="checkmark checkmark-checkbox"></span>
+        </label>
+        <div style="clear:both;"><div></div></div>
+      </div>
+    </div>
+  </div>
+  <div id="nomore">
+    <div class="box-head">
+      <h3>Mietdauer wählen</h3>
+    </div>
+    <div class="inner-extra-intended">
+      <form>
+        <p>
+          Das Ende dieser Miete ist offen. Ein Verlängern ist deswegen nicht
+          möglich.
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="id_modal_info_miethistorie">
+  <h3>Lorem ipsum dolor sit amet</h3>
+
+  <p>
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+    voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+    clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+    amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+    diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+    clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+    amet.
+  </p>
+
+  <div style="clear:both;"><div></div></div>
+</div>
+
+<div class="modal" id="id_modal_adress" style="display: none;">
+  <h3 id="new_title">Standort anlegen</h3>
+
+  <form onsubmit="event.preventDefault();">
+    <label>Name</label>
+    <input
+      type="text"
+      name="xxx"
+      placeholder="Standort 1"
+      required="required"
+      id="new_name"
+    />
+
+    <label>Str./Nr.*</label>
+    <input
+      type="email"
+      name="xxx"
+      placeholder="Musterstr. 11"
+      required="required"
+      id="new_strasse"
+    />
+
+    <div class="form-left">
+      <label>PLZ*</label>
+      <input
+        type="email"
+        name="xxx"
+        placeholder="11111"
+        required="required"
+        id="new_plz"
+        maxlength="5"
+        (input)="reconf('new_plz', 'new_ort', 'new_land')"
+      />
+    </div>
+
+    <div class="form-right">
+      <label>Ort*</label>
+      <input
+        type="email"
+        name="xxx"
+        placeholder="Musterstadt"
+        required="required"
+        id="new_ort"
+      />
+    </div>
+
+    <label>Land</label>
+    <select id="new_land">
+      <option>Deutschland</option>
+      <option>Belgien</option>
+      <option>Niederlande</option>
+    </select>
+
+    <label>Zusätzliche Information zur Adresse</label>
+    <textarea id="new_zusatz"></textarea>
+
+    <input type="hidden" id="new_id" value="" />
+    <input type="hidden" id="new_aktive" value="" />
+    <div class="centered space">
+      <input
+        type="submit"
+        name="submit"
+        value="Speichern"
+        (click)="saveStandort()"
+      />
+    </div>
+  </form>
+
+  <div style="clear:both;"><div></div></div>
+</div>
+
+<div class="mietprozess" *ngIf="mode == 'overview'">
+  <!-- Kategorien Auswahl vor Produktpfad-->
+  <div class="generell overview" *ngIf="!modifier1">
+    <!-- title -->
+    <div class="module red">
+      <div class="inner title">
+        <h1>Was will ich mieten</h1>
+        <!--  
+      <div id="id_title_image">
+        <img
+          src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/product-group-thumbnail.jpg"
+        />
+      </div>
+    -->
+        <div style="clear:both;"><div></div></div>
+      </div>
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+
+    <!-- content -->
+    <div id="id_content">
+      <!-- module -->
+      <div class="module">
+        <div class="inner centered title-status">
+          <ul>
+            <li class="active">Was</li>
+            <li>Wo</li>
+            <li>Wann</li>
+          </ul>
+          <div style="clear:both;"><div></div></div>
+        </div>
+      </div>
+      <!-- module end -->
+      <div class="module" style="display:none">
+        <div class="inner inner-extra-intended boxed">
+          <div class="box-head">
+            <h3>Gerätetyp direkt auswählen</h3>
+          </div>
+
+          <div class="search-box">
+            <form onsubmit="event.preventDefault();">
+              <input
+                type="text"
+                name="search"
+                placeholder="Gerätetyp eingeben..."
+                id="eingabe"
+              />
+              <input
+                type="submit"
+                name="submit"
+                id="search"
+                (click)="searchProdukt()"
+                value=""
+              />
+            </form>
+          </div>
+
+          <div style="clear:both;"><div></div></div>
+        </div>
+      </div>
+      <!-- module -->
+      <div class="module">
+        <div class="inner inner-intended boxed">
+          <div class="box-head">
+            <h3 id="target1name">Kategorie wählen</h3>
+          </div>
+
+          <div class="teaser-wrapper" id="target1">
+            <a
+              [routerLink]="['/mietprozess/overview', kat.slug]"
+              class="teaser"
+              *ngFor="let kat of kategorien"
+            >
+              <img src="{{ kat.link }}" />
+
+              <span>{{ kat.title }}</span>
+            </a>
+            <div style="clear:both;"><div></div></div>
+          </div>
+        </div>
+        <!-- module end -->
+
+        <!-- image -->
+        <div class="module">
+          <div class="inner">
+            <div class="centered">
+              <a [routerLink]="['../']" id="back" class="btn">Zurück</a>
+            </div>
+          </div>
+        </div>
+        <!-- image end -->
+
+        <!-- image -->
+        <div class="module full">
+          <img
+            src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/image.jpg"
+            alt="image"
+            width=""
+            height=""
+          />
+        </div>
+        <!-- image end -->
+
+        <!-- image -->
+        <div class="module black">
+          <div class="inner inner-intended">
+            <div class="left">
+              <div class="inner-small">
+                <h3>Newsletter</h3>
+
+                <p>
+                  Melden Sie sich jetzt unverbindlich für unseren Newsletter an,
+                  um keine Highlights mehr zu verpassen. Wir halten Sie mit
+                  Produktneuheiten, Gerken Highlights, Rabattaktionen und vielen
+                  Weiteren Informationen auf dem Laufenden!
+                </p>
+              </div>
+            </div>
+
+            <div class="right">
+              <div class="inner-small">
+                <form>
+                  <input type="email" name="email" placeholder="E-Mail" />
+
+                  <div class="radio-checkbox-wrapper">
+                    <label
+                      >Durch Absenden dieses Formulars erklärst Du dich mit der
+                      Speicherung und Verarbeitung Deiner Daten einverstanden.
+                      <a href="#">Weitere Informationen zum Datenschutz</a>.
+                      <input
+                        type="checkbox"
+                        name="DSGVO"
+                        value="OK"
+                        required="required"
+                      />
+                      <span class="checkmark checkmark-checkbox"></span>
+                    </label>
+                    <div style="clear:both;"><div></div></div>
+                  </div>
+
+                  <input type="submit" name="submit" value="Abonnieren" />
+                </form>
+              </div>
+            </div>
+
+            <div style="clear:both;"><div></div></div>
+          </div>
+        </div>
+        <!-- image end -->
+
+        <div style="clear:both;"><div></div></div>
+      </div>
+    </div>
+  </div>
+  <!-- Kategorien Auswahl Produktpfad-->
+  <div class="auswahl overview" *ngIf="modifier1">
+    <!-- title -->
+    <div class="module red">
+      <div class="inner title">
+        <h1>{{ modifier1.title }} mieten</h1>
+
+        <div id="id_title_image">
+          <img src="{{ modifier1.link }}" />
+        </div>
+
+        <div style="clear:both;"><div></div></div>
+      </div>
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+    <!-- content -->
+    <div id="id_content">
+      <!-- module -->
+      <div class="module">
+        <div class="inner centered title-status">
+          <ul>
+            <li class="active">Was</li>
+            <li>Wo</li>
+            <li>Wann</li>
+          </ul>
+          <div style="clear:both;"><div></div></div>
+        </div>
+      </div>
+      <!-- module end -->
+      <!-- module -->
+      <div class="module module-margin">
+        <div class="inner inner-extra-intended boxed">
+          <div class="box-head">
+            <h3>Wie möchten Sie ihr Geräte finden?</h3>
+          </div>
+          <div class="selection-wrapper">
+            <a
+              [routerLink]="['/mietprozess', 'category', modifier1.slug]"
+              class="btn"
+              >Ich weiß was ich mieten möchte</a
+            >
+
+            <a
+              [routerLink]="['/mietprozess', 'wizard']"
+              class="btn"
+              *ngIf="modifier1.title == 'Arbeitsbühnen'"
+              >Ich benötige Unterstützung bei der Auswahl</a
+            >
+
+            <a
+              [routerLink]="['/mietprozess', 'miethistorie']"
+              class="btn"
+              *ngIf="token"
+              >Auswahl aus meiner Miethistorie</a
+            >
+
+            <a
+              [routerLink]="['/mietprozess', 'catalog', modifier1.slug]"
+              class="btn"
+              >Mietkatalog ansehen</a
+            >
+          </div>
+
+          <div style="clear:both;"><div></div></div>
+        </div>
+      </div>
+      <!-- module end -->
+
+      <!-- image -->
+      <div class="module">
+        <div class="inner">
+          <div class="centered">
+            <a [routerLink]="['../']" id="back" class="btn">Zurück</a>
+          </div>
+        </div>
+      </div>
+      <!-- image end -->
+
+      <!-- image -->
+      <div class="module full">
+        <img
+          src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/image.jpg"
+          alt="image"
+          width=""
+          height=""
+        />
+      </div>
+      <!-- image end -->
+
+      <!-- image -->
+      <div class="module black">
+        <div class="inner inner-intended">
+          <div class="left">
+            <div class="inner-small">
+              <h3>Newsletter</h3>
+
+              <p>
+                Melden Sie sich jetzt unverbindlich für unseren Newsletter an,
+                um keine Highlights mehr zu verpassen. Wir halten Sie mit
+                Produktneuheiten, Gerken Highlights, Rabattaktionen und vielen
+                Weiteren Informationen auf dem Laufenden!
+              </p>
+            </div>
+          </div>
+
+          <div class="right">
+            <div class="inner-small">
+              <form>
+                <input type="email" name="email" placeholder="E-Mail" />
+
+                <div class="radio-checkbox-wrapper">
+                  <label
+                    >Durch Absenden dieses Formulars erklärst Du dich mit der
+                    Speicherung und Verarbeitung Deiner Daten einverstanden.
+                    <a href="#">Weitere Informationen zum Datenschutz</a>.
+                    <input
+                      type="checkbox"
+                      name="DSGVO"
+                      value="OK"
+                      required="required"
+                    />
+                    <span class="checkmark checkmark-checkbox"></span>
+                  </label>
+                  <div style="clear:both;"><div></div></div>
+                </div>
+
+                <input type="submit" name="submit" value="Abonnieren" />
+              </form>
+            </div>
+          </div>
+
+          <div style="clear:both;"><div></div></div>
+        </div>
+      </div>
+      <!-- image end -->
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- WIZARD -->
+<div class="mietprozess" *ngIf="mode == 'wizard' && !product">
+  <!--MODALS-->
+  <div class="modal" id="id_modal_info">
+    <h3>Lorem Ipsum</h3>
+    <img
+      src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/image.jpg"
+      alt="image"
+      width=""
+      height=""
+      (load)="reloadWizard()"
+    /><!--ADDED-->
+    <p>
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+      clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+      amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+      nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+      diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+      Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+      sit amet.
+    </p>
+
+    <div style="clear:both;"><div></div></div>
+  </div>
+  <!--MODALS END-->
+  <!-- title -->
+  <div class="module red">
+    <div class="inner title">
+      <h1>{{ modifier1.title }} mieten</h1>
+
+      <div id="id_title_image">
+        <img src="{{ modifier1.link }}" />
+      </div>
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+
+    <div style="clear:both;"><div></div></div>
+  </div>
+  <!-- content -->
+  <div id="id_content">
+    <!-- module -->
+    <div class="module">
+      <div class="inner centered title-status">
+        <ul>
+          <li class="active">Was</li>
+          <li>Wo</li>
+          <li>Wann</li>
+        </ul>
+        <div style="clear:both;"><div></div></div>
+      </div>
+    </div>
+    <!-- module end -->
+    <!-- module <FRAGE>-->
+    <div id="frage" (load)="reloadWizard()"></div>
+    <!-- module end -->
+
+    <!-- module -->
+    <div class="module centered">
+      <div class="inner inner-intended">
+        <div class="centered">
+          <!--
+        <a href="mietprozess-2.html" class="btn">Zurück</a>
+
+        <a href="mietprozess-4-5.html" class="btn">Weiter</a>
+        -->
+          <a
+            id="back_wizard"
+            (click)="wizard_back()"
+            class="btn middle-space-btn"
+            >Zurück</a
+          >
+
+          <a
+            id="forward_wizard"
+            class="btn"
+            (click)="wizard_forward()"
+            data-stufe="0"
+            >Weiter</a
+          >
+        </div>
+
+        <div style="clear:both;"><div></div></div>
+      </div>
+    </div>
+    <!-- module end -->
+
+    <!-- image -->
+    <div class="module full">
+      <img
+        src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/image.jpg"
+        alt="image"
+        width=""
+        height=""
+      />
+    </div>
+    <!-- image end -->
+
+    <!-- image -->
+    <div class="module black">
+      <div class="inner inner-intended">
+        <div class="left">
+          <div class="inner-small">
+            <h3>Newsletter</h3>
+
+            <p>
+              Melden Sie sich jetzt unverbindlich für unseren Newsletter an, um
+              keine Highlights mehr zu verpassen. Wir halten Sie mit
+              Produktneuheiten, Gerken Highlights, Rabattaktionen und vielen
+              Weiteren Informationen auf dem Laufenden!
+            </p>
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="inner-small">
+            <form>
+              <input type="email" name="email" placeholder="E-Mail" />
+
+              <div class="radio-checkbox-wrapper">
+                <label
+                  >Durch Absenden dieses Formulars erklärst Du dich mit der
+                  Speicherung und Verarbeitung Deiner Daten einverstanden.
+                  <a href="#">Weitere Informationen zum Datenschutz</a>.
+                  <input
+                    type="checkbox"
+                    name="DSGVO"
+                    value="OK"
+                    required="required"
+                  />
+                  <span class="checkmark checkmark-checkbox"></span>
+                </label>
+                <div style="clear:both;"><div></div></div>
+              </div>
+
+              <input type="submit" name="submit" value="Abonnieren" />
+            </form>
+          </div>
+        </div>
+
+        <div style="clear:both;"><div></div></div>
+      </div>
+    </div>
+    <!-- image end -->
+    <div style="clear:both;"><div></div></div>
+  </div>
+</div>
+<div class="mietprozess" *ngIf="mode == 'empfehlung'">
+  <!--MARKER-->
+  <!-- title -->
+  <div class="module red">
+    <div class="inner title" *ngIf="modifier1 && modifier2">
+      <h1>{{ product['hauptkategorie'] }} mieten</h1>
+
+      <div id="id_title_image">
+        <img title="{{ modifier1.title }} " src="{{ modifier2.link }}" />
+      </div>
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+    <div class="inner title" *ngIf="!modifier1 && !modifier2">
+      <h1 id="kat_title">mieten</h1>
+
+      <div id="id_title_image">
+        <img title="" src="" id="kat_img" />
+      </div>
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+    <div class="inner title" *ngIf="!modifier1">
+      <h1>Was möchte ich mieten</h1>
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+    <div style="clear:both;"><div></div></div>
+  </div>
+
+  <!-- content -->
+  <div id="id_content">
+    <!-- module -->
+    <div class="module">
+      <div class="inner centered title-status">
+        <ul>
+          <li class="active">Was</li>
+          <li class="active">Wo</li>
+          <li class="active">Wann</li>
+        </ul>
+
+        <div style="clear:both;"><div></div></div>
+      </div>
+    </div>
+    <!-- module end -->
+
+    <!-- module -->
+    <div class="module">
+      <div class="inner inner-intended boxed">
+        <div class="box-head">
+          <h3 id="title">Produkt wählen</h3>
+        </div>
+        <div class="inner inner-intended">
+          <div class="teaser-wrapper" id="target1">
+            <div id="featured"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="inner inner-intended boxed">
+        <div class="box-head">
+          <h3 id="title2">Alternativen</h3>
+        </div>
+        <div class="inner inner-intended">
+          <div class="teaser-wrapper" id="target1">
+            <div id="not-that-featured"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- module subkategorie end-->
+
+    <!-- image -->
+    <div class="module">
+      <div class="inner">
+        <!--
+    <div class="centered">
+      <a [routerLink]="['../']" id="back" class="btn">Zurück</a>
+    </div>
+  -->
+        <div class="centered">
+          <a
+            *ngIf="slug"
+            id="back_wizard"
+            [routerLink]="['/mietprozess/standort', slug]"
+            class="btn middle-space-btn"
+            >Zurück</a
+          >
+          <a
+            *ngIf="!slug"
+            id="back_wizard"
+            [routerLink]="['/mietprozess/standort']"
+            class="btn middle-space-btn"
+            >Zurück</a
+          >
+        </div>
+      </div>
+    </div>
+    <!-- image end -->
+
+    <!-- image -->
+    <div class="module full">
+      <img
+        src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/image.jpg"
+        alt="image"
+        width=""
+        height=""
+        (load)="onload_empfehlung()"
+      />
+    </div>
+    <!-- image end -->
+
+    <!-- image -->
+    <div class="module black">
+      <div class="inner inner-intended">
+        <div class="left">
+          <div class="inner-small">
+            <h3>Newsletter</h3>
+
+            <p>
+              Melden Sie sich jetzt unverbindlich für unseren Newsletter an, um
+              keine Highlights mehr zu verpassen. Wir halten Sie mit
+              Produktneuheiten, Gerken Highlights, Rabattaktionen und vielen
+              Weiteren Informationen auf dem Laufenden!
+            </p>
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="inner-small">
+            <form>
+              <input type="email" name="email" placeholder="E-Mail" />
+
+              <div class="radio-checkbox-wrapper">
+                <label
+                  >Durch Absenden dieses Formulars erklärst Du dich mit der
+                  Speicherung und Verarbeitung Deiner Daten einverstanden.
+                  <a href="#">Weitere Informationen zum Datenschutz</a>.
+                  <input
+                    type="checkbox"
+                    name="DSGVO"
+                    value="OK"
+                    required="required"
+                  />
+                  <span class="checkmark checkmark-checkbox"></span>
+                </label>
+                <div style="clear:both;"><div></div></div>
+              </div>
+
+              <input type="submit" name="submit" value="Abonnieren" />
+            </form>
+          </div>
+        </div>
+
+        <div style="clear:both;"><div></div></div>
+      </div>
+    </div>
+    <!-- image end -->
+
+    <div style="clear:both;"><div></div></div>
+  </div>
+</div>
+<!--ENDE WIZARD-->
+<div class="mietprozess" *ngIf="mode == 'catalog'">
+  <div *ngIf="test39 != ''; else elseBlockKata">
+    <div class="module red">
+      <div class="inner title">
+        <h1>Mietkatalog - {{ feld.hauptkategorie }}</h1>
+
+        <div style="clear:both;"><div></div></div>
+      </div>
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+  </div>
+  <ng-template #elseBlockKata>
+    <div class="module red">
+      <div class="inner title">
+        <h1>Mietkatalog</h1>
+
+        <div style="clear:both;"><div></div></div>
+      </div>
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+  </ng-template>
+  <div class="module">
+    <div class="inner">
+      <div class="inner boxed more-margin">
+        <div class="box-head" *ngIf="test39 == ''; else elseBlockKata3">
+          <h3 id="target1name">Kategorie wählen</h3>
+        </div>
+        <ng-template #elseBlockKata3>
+          <div class="box-head">
+            <h3 id="target1name">Produkt wählen</h3>
+          </div>
+        </ng-template>
+        <div class="teaser-wrapper" id="outletx"></div>
+      </div>
+    </div>
+  </div>
+  <!-- image -->
+  <div class="module" *ngIf="test39 != ''; else elseBlockKata2">
+    <div class="inner">
+      <div class="centered">
+        <a (click)="nav('/mietprozess/catalog')" id="back" class="btn"
+          >Zurück</a
+        >
+      </div>
+    </div>
+  </div>
+  <!-- image end -->
+  <ng-template #elseBlockKata2>
+    <!-- image -->
+    <div class="module">
+      <div class="inner">
+        <div class="centered">
+          <a (click)="nav('/mietprozess')" id="back" class="btn">Zurück</a>
+        </div>
+      </div>
+    </div>
+    <!-- image end -->
+  </ng-template>
+  <!-- image -->
+  <div class="module full">
+    <img
+      src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/image.jpg"
+      alt="image"
+      width=""
+      height=""
+      (load)="catalogload()"
+    />
+  </div>
+  <!-- image end -->
+
+  <!-- image -->
+  <div class="module black">
+    <div class="inner inner-intended">
+      <div class="left">
+        <div class="inner-small">
+          <h3>Newsletter</h3>
+
+          <p>
+            Melden Sie sich jetzt unverbindlich für unseren Newsletter an, um
+            keine Highlights mehr zu verpassen. Wir halten Sie mit
+            Produktneuheiten, Gerken Highlights, Rabattaktionen und vielen
+            Weiteren Informationen auf dem Laufenden!
+          </p>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="inner-small">
+          <form>
+            <input type="email" name="email" placeholder="E-Mail" />
+
+            <div class="radio-checkbox-wrapper">
+              <label
+                >Durch Absenden dieses Formulars erklärst Du dich mit der
+                Speicherung und Verarbeitung Deiner Daten einverstanden.
+                <a href="#">Weitere Informationen zum Datenschutz</a>.
+                <input
+                  type="checkbox"
+                  name="DSGVO"
+                  value="OK"
+                  required="required"
+                />
+                <span class="checkmark checkmark-checkbox"></span>
+              </label>
+              <div style="clear:both;"><div></div></div>
+            </div>
+
+            <input type="submit" name="submit" value="Abonnieren" />
+          </form>
+        </div>
+      </div>
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+  </div>
+  <!-- image end -->
+
+  <div style="clear:both;"><div></div></div>
+</div>
+<div class="mietprozess" *ngIf="mode == 'miethistorie'">
+  <!-- title -->
+  <div class="module red" id="miethistorie_aktuell3">
+    <div class="inner title">
+      <h1>Ihre aktuellen Mietgeräte</h1>
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+
+    <div style="clear:both;"><div></div></div>
+  </div>
+  <!-- module -->
+  <div class="module red" id="miethistorie_aktuell2">
+    <div class="inner">
+      <p id="doi2"></p>
+      <div id="miethistorie_aktuell">
+        <div class="product">
+          <div class="product-image">
+            <img
+              src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/product.jpg"
+            />
+          </div>
+
+          <div class="product-text">
+            <p>
+              <strong>Lorem ipsum dolor sit amet, consetetur sadipscing</strong
+              ><br />
+              Sed diam nonumy eirmod tempor invidunt ut labore et dolore
+            </p>
+          </div>
+
+          <div class="product-actions">
+            <a [routerLink]="['/produktdetailseite']" class="btn">Details</a>
+
+            <a [routerLink]="['/mietprozess', 'miethistorie']" class="btn"
+              >Erneut mieten</a
+            >
+          </div>
+        </div>
+
+        <div class="product">
+          <div class="product-image">
+            <img
+              src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/product.jpg"
+            />
+          </div>
+
+          <div class="product-text">
+            <p>
+              <strong>Lorem ipsum dolor sit amet, consetetur sadipscing</strong
+              ><br />
+              Sed diam nonumy eirmod tempor invidunt ut labore et dolore
+            </p>
+          </div>
+
+          <div class="product-actions">
+            <a [routerLink]="['/produktdetailseite']" class="btn">Details</a>
+
+            <a [routerLink]="['/mietprozess', 'miethistorie']" class="btn"
+              >Erneut mieten</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="more-wrapper" id="aktuell">
+        <a (click)="loadAllMiethistorie('aktuell')" class="more"
+          >Alle anzeigen</a
+        >
+      </div>
+      <div class="more-wrapper" id="aktuell_weniger" style="display:none">
+        <a (click)="loadAllMiethistorie2('aktuell')" class="less pointi"
+          >Weniger anzeigen</a
+        >
+      </div>
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+    <div class="module darkgrey">
+      <div class="inner title">
+        <!--
+    <a
+      data-fancybox
+      data-src="#id_modal_info"
+      data-options='{"touch" : false}'
+      href="javascript:void(0);"
+      class="help"
+      >Hilfe bei Problemen</a
+    >
+    -->
+        <a [routerLink]="['faq']" class="btn">Hilfe bei Problemen</a>
+        <div style="clear:both;"><div></div></div>
+      </div>
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+  </div>
+  <!-- module end -->
+
+  <!-- module -->
+  <div class="module lightgrey" id="miethistorie_vergangen2">
+    <div class="inner">
+      <h2>Ihre Miethistorie</h2>
+      <div id="miethistorie_vergangen">
+        <div class="product">
+          <div class="product-image">
+            <img
+              src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/product.jpg"
+            />
+          </div>
+
+          <div class="product-text">
+            <p>
+              <strong>Lorem ipsum dolor sit amet, consetetur sadipscing</strong
+              ><br />
+              Sed diam nonumy eirmod tempor invidunt ut labore et dolore
+            </p>
+          </div>
+
+          <div class="product-actions">
+            <a href="#" class="btn">Details</a>
+
+            <a href="#" class="btn">Erneut mieten</a>
+          </div>
+        </div>
+
+        <div class="product">
+          <div class="product-image">
+            <img
+              src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/product.jpg"
+            />
+          </div>
+
+          <div class="product-text">
+            <p>
+              <strong>Lorem ipsum dolor sit amet, consetetur sadipscing</strong
+              ><br />
+              Sed diam nonumy eirmod tempor invidunt ut labore et dolore
+            </p>
+          </div>
+
+          <div class="product-actions">
+            <a href="#" class="btn">Details</a>
+
+            <a href="#" class="btn">Erneut mieten</a>
+          </div>
+        </div>
+      </div>
+      <div class="more-wrapper" id="vergangen">
+        <a (click)="loadAllMiethistorie('vergangen')" class="more"
+          >Alle anzeigen</a
+        >
+
+        <div style="clear:both;"><div></div></div>
+      </div>
+      <div class="more-wrapper" id="vergangen_weniger" style="display:none">
+        <a (click)="loadAllMiethistorie2('vergangen')" class="less pointi"
+          >Weniger anzeigen</a
+        >
+      </div>
+    </div>
+    <!-- module end -->
+
+    <div class="white">
+      <div class="inner">
+        <div class="inner-small login-submit">
+          <div style="clear:both;"><div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="clear:both;"><div></div></div>
+
+  <!-- image -->
+  <div class="module full">
+    <img
+      src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/image.jpg"
+      alt="image"
+      width=""
+      height=""
+      (load)="onload_miethistorie()"
+    />
+  </div>
+  <!-- image end -->
+
+  <!-- image -->
+  <div class="module black">
+    <div class="inner inner-intended">
+      <div class="left">
+        <div class="inner-small">
+          <h3>Newsletter</h3>
+
+          <p>
+            Melden Sie sich jetzt unverbindlich für unseren Newsletter an, um
+            keine Highlights mehr zu verpassen. Wir halten Sie mit
+            Produktneuheiten, Gerken Highlights, Rabattaktionen und vielen
+            Weiteren Informationen auf dem Laufenden!
+          </p>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="inner-small">
+          <form>
+            <input type="email" name="email" placeholder="E-Mail" />
+
+            <div class="radio-checkbox-wrapper">
+              <label
+                >Durch Absenden dieses Formulars erklärst Du dich mit der
+                Speicherung und Verarbeitung Deiner Daten einverstanden.
+                <a href="#">Weitere Informationen zum Datenschutz</a>.
+                <input
+                  type="checkbox"
+                  name="DSGVO"
+                  value="OK"
+                  required="required"
+                />
+                <span class="checkmark checkmark-checkbox"></span>
+              </label>
+              <div style="clear:both;"><div></div></div>
+            </div>
+
+            <input type="submit" name="submit" value="Abonnieren" />
+          </form>
+        </div>
+      </div>
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+  </div>
+  <!-- image end -->
+
+  <div style="clear:both;"><div></div></div>
+</div>
+<div class="mietprozess" *ngIf="mode == 'category'">
+  <!-- title -->
+  <div class="module red">
+    <div class="inner title" *ngIf="modifier1">
+      <h1>{{ modifier1.title }} mieten</h1>
+
+      <div id="id_title_image" *ngIf="modifier1 && !modifier2">
+        <img title="{{ modifier1.title }} " src="{{ modifier1.link }}" />
+      </div>
+      <div id="id_title_image" *ngIf="modifier1 && modifier2">
+        <img title="{{ modifier2.title }} " src="{{ modifier2.link }}" />
+      </div>
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+    <div class="inner title" *ngIf="!modifier1">
+      <h1>Was möchte ich mieten</h1>
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+    <div style="clear:both;"><div></div></div>
+  </div>
+
+  <!-- content -->
+  <div id="id_content">
+    <!-- module -->
+    <div class="module">
+      <div class="inner centered title-status">
+        <ul>
+          <li class="active">Was</li>
+          <li>Wo</li>
+          <li>Wann</li>
+        </ul>
+
+        <div style="clear:both;"><div></div></div>
+      </div>
+    </div>
+    <!-- module end -->
+    <!-- module -->
+    <div class="module" *ngIf="mode == 'category' && !modifier1 && !modifier2">
+      <div class="inner inner-extra-intended boxed">
+        <div class="box-head">
+          <h3>Gerätetyp direkt auswählen</h3>
+        </div>
+
+        <div class="search-box" id="search-box">
+          <form onsubmit="event.preventDefault();">
+            <input
+              type="text"
+              name="search"
+              placeholder="Gerätetyp eingeben..."
+              id="eingabe"
+            />
+            <input
+              type="submit"
+              name="submit"
+              id="search"
+              (click)="searchProdukt()"
+              value=""
+            />
+          </form>
+        </div>
+
+        <div style="clear:both;"><div></div></div>
+      </div>
+    </div>
+    <!-- module end -->
+    <!-- module -->
+    <div class="module">
+      <div
+        class="inner inner-intended"
+        *ngIf="mode == 'category' && !modifier1 && !modifier2"
+      >
+        <div class="teaser-wrapper" id="target1">
+          <a
+            [routerLink]="['/mietprozess/category', kat.slug]"
+            class="teaser"
+            *ngFor="let kat of kategorien"
+          >
+            <img title="{{ kat.title }}" src="{{ kat.link }}" />
+
+            <span>{{ kat.title }}</span>
+          </a>
+          <div style="clear:both;"><div></div></div>
+        </div>
+      </div>
+      <!-- module end -->
+      <!-- module subkategorie start-->
+      <div class="module" *ngIf="mode == 'category' && modifier1 && !modifier2">
+        <div class="inner inner-extra-intended boxed">
+          <div class="box-head">
+            <h3>Gerätetyp direkt auswählen</h3>
+          </div>
+
+          <div class="search-box" id="search-box">
+            <form onsubmit="event.preventDefault();">
+              <input
+                type="text"
+                name="search"
+                placeholder="Gerätetyp eingeben..."
+                id="eingabe"
+              />
+              <input
+                type="submit"
+                name="submit"
+                id="search"
+                (click)="searchProdukt()"
+                value=""
+              />
+            </form>
+          </div>
+
+          <div style="clear:both;"><div></div></div>
+        </div>
+      </div>
+      <div class="inner inner-intended boxed">
+        <div class="box-head">
+          <h3
+            id="target1name"
+            *ngIf="mode == 'category' && modifier1 && modifier2"
+          >
+            Produkt wählen
+          </h3>
+          <h3
+            id="target1name"
+            *ngIf="mode == 'category' && modifier1 && !modifier2"
+          >
+            Subkategorie wählen
+          </h3>
+        </div>
+        <div
+          class="inner inner-intended"
+          *ngIf="mode == 'category' && modifier1 && modifier2"
+        >
+          <div class="teaser-wrapper" id="target1">
+            <div id="produkte"></div>
+          </div>
+        </div>
+        <div
+          class="inner inner-intended"
+          *ngIf="mode == 'category' && modifier1 && !modifier2"
+        >
+          <div class="teaser-wrapper" id="target1b">
+            <a
+              [routerLink]="[
+                '/mietprozess/category',
+                modifier1.slug,
+                subkat.slug
+              ]"
+              class="teaser"
+              *ngFor="let subkat of modifier1.unterkategorien"
+            >
+              <img title="{{ subkat.title }}" src="{{ subkat.link }}" />
+
+              <span>{{ subkat.title }}</span>
+            </a>
+            <div style="clear:both;"><div></div></div>
+          </div>
+        </div>
+      </div>
+      <!-- module subkategorie end-->
+      <!-- module produkte start-->
+
+      <div
+        class="inner inner-intended"
+        *ngIf="mode == 'category' && modifier1 && modifier2"
+      >
+        <div class="search-box" id="search-box">
+          <form onsubmit="event.preventDefault();">
+            <input
+              type="text"
+              name="search"
+              placeholder="Gerätetyp eingeben..."
+              id="eingabe"
+            />
+            <input
+              type="submit"
+              name="submit"
+              id="search"
+              (click)="searchProdukt()"
+              value=""
+            />
+          </form>
+        </div>
+      </div>
+      <!-- module produkte end-->
+
+      <!-- image -->
+      <div class="module">
+        <div class="inner">
+          <!--
+        <div class="centered">
+          <a [routerLink]="['../']" id="back" class="btn">Zurück</a>
+        </div>
+      -->
+          <div class="centered" *ngIf="!modifier2; else elseBlockToastbrot">
+            <a [routerLink]="['/mietprozess']" id="back" class="btn">Zurück</a>
+          </div>
+          <ng-template #elseBlockToastbrot>
+            <div class="centered">
+              <a [routerLink]="['../']" id="back" class="btn">Zurück</a>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+      <!-- image end -->
+
+      <!-- image -->
+      <div class="module full">
+        <img
+          src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/image.jpg"
+          alt="image"
+          width=""
+          height=""
+        />
+      </div>
+      <!-- image end -->
+
+      <!-- image -->
+      <div class="module black">
+        <div class="inner inner-intended">
+          <div class="left">
+            <div class="inner-small">
+              <h3>Newsletter</h3>
+
+              <p>
+                Melden Sie sich jetzt unverbindlich für unseren Newsletter an,
+                um keine Highlights mehr zu verpassen. Wir halten Sie mit
+                Produktneuheiten, Gerken Highlights, Rabattaktionen und vielen
+                Weiteren Informationen auf dem Laufenden!
+              </p>
+            </div>
+          </div>
+
+          <div class="right">
+            <div class="inner-small">
+              <form>
+                <input type="email" name="email" placeholder="E-Mail" />
+
+                <div class="radio-checkbox-wrapper">
+                  <label
+                    >Durch Absenden dieses Formulars erklärst Du dich mit der
+                    Speicherung und Verarbeitung Deiner Daten einverstanden.
+                    <a href="#">Weitere Informationen zum Datenschutz</a>.
+                    <input
+                      type="checkbox"
+                      name="DSGVO"
+                      value="OK"
+                      required="required"
+                    />
+                    <span class="checkmark checkmark-checkbox"></span>
+                  </label>
+                  <div style="clear:both;"><div></div></div>
+                </div>
+
+                <input type="submit" name="submit" value="Abonnieren" />
+              </form>
+            </div>
+          </div>
+
+          <div style="clear:both;"><div></div></div>
+        </div>
+      </div>
+      <!-- image end -->
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+  </div>
+</div>
+<!-- Mietprozess Single Produkt 7b -->
+<!-- https://diesdas.codersunlimited.de/diesdas/templates/mietprozess-7b.html -->
+<div class="mietprozess" *ngIf="mode == 'auswahl' && product">
+  <div class="module red">
+    <div class="inner title">
+      <h1>{{ product['hauptkategorie'] }} mieten</h1>
+
+      <div id="id_title_image">
+        <img src="{{ katbildlink }}" />
+      </div>
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+
+    <div style="clear:both;"><div></div></div>
+  </div>
+
+  <!-- content -->
+  <div id="id_content">
+    <form>
+      <!-- module -->
+      <div class="module">
+        <div class="inner centered title-status">
+          <ul>
+            <li class="active">Was</li>
+            <li class="active">Wo</li>
+            <li class="active">Wann</li>
+          </ul>
+          <div style="clear:both;"><div></div></div>
+        </div>
+      </div>
+      <!-- module -->
+      <div class="module">
+        <!-- inner-intended -->
+        <div class="inner no-padding">
+          <div class="left-2-3">
+            <div class="boxed">
+              <div class="box-head">
+                <h3>Ihre Auswahl</h3>
+              </div>
+
+              <div class="product">
+                <div class="product-image">
+                  <img src="{{ product['bild'].split('|')[0] }}" />
+                </div>
+
+                <div class="product-text">
+                  <p>
+                    <strong>{{ product['produkt'] }}</strong>
+                  </p>
+
+                  <ng-template [ngIf]="mietdauer == 1">
+                    <h4 id="preis">{{ product['preis'].split('|')[0] }}€</h4>
+                  </ng-template>
+
+                  <ng-template [ngIf]="mietdauer < 4 && mietdauer != 1">
+                    <h4 id="preis">
+                      {{ zeit[7] * product['preis'].split('|')[0] }}€
+                    </h4>
+                  </ng-template>
+
+                  <ng-template [ngIf]="mietdauer > 3 || zeit[4] || !mietdauer">
+                    <h4 id="preis">
+                      &Oslash; {{ product['preis'].split('|')[0] }}€/Tag
+                    </h4>
+                  </ng-template>
+                </div>
+
+                <div class="product-actions" style="width: 100%;">
+                  <a
+                    [routerLink]="['/produktdetailseite', product['slug']]"
+                    class="btn btn-outline"
+                    >Details</a
+                  >
+
+                  <select
+                    class="formularinput chosen"
+                    id="preisstorage"
+                    (change)="refreshGesamt()"
+                  >
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+              </div>
+
+              <div
+                class="radio-checkbox-wrapper"
+                *ngIf="additional_standort[1]"
+              >
+                <label class="with-price"
+                  >Bedienung durch Gerken
+                  <input type="checkbox" name="xxx" value="OK" />
+                  <span class="checkmark checkmark-checkbox"></span>
+                  <span class="price">60,-€</span>
+                </label>
+                <div style="clear:both;"><div></div></div>
+              </div>
+
+              <h5>Versicherungen {{ product['hauptkategorie'] }}</h5>
+              <div id="versicherungen1">
+                <div class="radio-checkbox-wrapper">
+                  <label class="with-price"
+                    >Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                    sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                    magna aliquyam erat
+                    <input type="checkbox" name="xxx" value="OK" />
+                    <span class="checkmark checkmark-checkbox"></span>
+                    <span class="price">10,-€</span>
+                  </label>
+                  <div style="clear:both;"><div></div></div>
+                </div>
+
+                <div class="radio-checkbox-wrapper">
+                  <label class="with-price"
+                    >Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                    sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                    magna aliquyam erat
+                    <input type="checkbox" name="xxx" value="OK" />
+                    <span class="checkmark checkmark-checkbox"></span>
+                    <span class="price">15,-€</span>
+                  </label>
+                  <div style="clear:both;"><div></div></div>
+                </div>
+
+                <div class="radio-checkbox-wrapper">
+                  <label class="with-price"
+                    >Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                    sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                    magna aliquyam erat
+                    <input type="checkbox" name="xxx" value="OK" />
+                    <span class="checkmark checkmark-checkbox"></span>
+                    <span class="price">20,-€</span>
+                  </label>
+                  <div style="clear:both;"><div></div></div>
+                </div>
+
+                <div class="radio-checkbox-wrapper">
+                  <label class="with-price"
+                    >Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                    sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                    magna aliquyam erat
+                    <input type="checkbox" name="xxx" value="OK" />
+                    <span class="checkmark checkmark-checkbox"></span>
+                    <span class="price">20,-€</span>
+                  </label>
+                  <div style="clear:both;"><div></div></div>
+                </div>
+
+                <div class="radio-checkbox-wrapper">
+                  <label class="with-price"
+                    >Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                    sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                    magna aliquyam erat
+                    <input type="checkbox" name="xxx" value="OK" />
+                    <span class="checkmark checkmark-checkbox"></span>
+                    <span class="price">20,-€</span>
+                  </label>
+                  <div style="clear:both;"><div></div></div>
+                </div>
+              </div>
+              <div class="accordeon-wrapper">
+                <ul class="accordeon">
+                  <li>
+                    <input type="checkbox" class="accordeon-checkbox" checked />
+                    <a href="javascript:void(0);" class="accordeon-link"
+                      >Passendes Zubehör</a
+                    >
+                    <div class="content">
+                      <div class="content-inner" id="zubehoer">
+                        <div style="clear: both;"><div></div></div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" class="accordeon-checkbox" checked />
+                    <a href="javascript:void(0);" class="accordeon-link"
+                      >Optionale Bundles</a
+                    >
+                    <div class="content">
+                      <div class="content-inner" id="bundles">
+                        <div style="clear: both;"><div></div></div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="right-1-3">
+            <div class="centered boxed">
+              <p>Gesamtpreis:</p>
+
+              <h3 id="gesamtpreis">
+                {{
+                  parseInt(product['preis'].split('|')[0]) * parseInt(zeit[7])
+                }}€
+              </h3>
+
+              <p class="red-text" id="ersparnis"></p>
+
+              <a (click)="I_will_have_order('abschluss')" class="btn"
+                >Jetzt bestellen</a
+              >
+
+              <hr />
+
+              <a (click)="I_will_have_order('again')" class="btn btn-grey"
+                >+ Hinzufügen</a
+              >
+
+              <div style="clear:both;height: 20px;"><div></div></div>
+
+              <p class="small">
+                *Ein weiteres Produkt wird für die selbe Baustelle und den
+                selben Zeitraum hinzugefügt
+              </p>
+            </div>
+          </div>
+
+          <div style="clear:both;"><div></div></div>
+        </div>
+
+        <!-- module -->
+        <div class="module">
+          <div class="inner no-padding">
+            <a
+              [routerLink]="['/mietprozess/zeit', product['slug']]"
+              class="btn"
+              style="background:#de111e"
+              name="Alinas super toller roter Button"
+              >Zurück</a
+            >
+            <div style="clear:both;"><div></div></div>
+          </div>
+        </div>
+        <!-- module end -->
+      </div>
+
+      <!-- module end -->
+    </form>
+
+    <!-- image -->
+    <div class="module full">
+      <img
+        src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/image.jpg"
+        alt="image"
+        width=""
+        height=""
+        (load)="onload_auswahl()"
+      />
+    </div>
+    <!-- image end -->
+
+    <!-- image -->
+    <div class="module black">
+      <div class="inner inner-intended">
+        <div class="left">
+          <div class="inner-small">
+            <h3>Newsletter</h3>
+
+            <p>
+              Melden Sie sich jetzt unverbindlich für unseren Newsletter an, um
+              keine Highlights mehr zu verpassen. Wir halten Sie mit
+              Produktneuheiten, Gerken Highlights, Rabattaktionen und vielen
+              Weiteren Informationen auf dem Laufenden!
+            </p>
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="inner-small">
+            <form>
+              <input type="email" name="email" placeholder="E-Mail" />
+
+              <div class="radio-checkbox-wrapper">
+                <label
+                  >Durch Absenden dieses Formulars erklärst Du dich mit der
+                  Speicherung und Verarbeitung Deiner Daten einverstanden.
+                  <a href="#">Weitere Informationen zum Datenschutz</a>.
+                  <input
+                    type="checkbox"
+                    name="DSGVO"
+                    value="OK"
+                    required="required"
+                  />
+                  <span class="checkmark checkmark-checkbox"></span>
+                </label>
+                <div style="clear:both;"><div></div></div>
+              </div>
+
+              <input type="submit" name="submit" value="Abonnieren" />
+            </form>
+          </div>
+        </div>
+
+        <div style="clear:both;"><div></div></div>
+      </div>
+    </div>
+    <!-- image end -->
+
+    <div style="clear:both;"><div></div></div>
+  </div>
+</div>
+<!-- Mietprozess Single Produkt 7b  END-->
+<!-- Mietprozess Zeitauswahl -->
+<!-- https://diesdas.codersunlimited.de/diesdas/templates/mietprozess-6.html -->
+<div class="mietprozess" *ngIf="mode == 'zeit' && product">
+  <!-- Modals -->
+  <div class="modal" id="id_modal_info">
+    <h3>Lorem ipsum dolor</h3>
+
+    <p>
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+      clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+      amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+      nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+      diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+      Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+      sit amet.
+    </p>
+
+    <div style="clear:both;"><div></div></div>
+  </div>
+  <!-- Modals END-->
+
+  <!-- title -->
+  <div class="module red">
+    <div class="inner title">
+      <h1 id="title_zeit">{{ product['hauptkategorie'] }} mieten</h1>
+
+      <div id="id_title_image">
+        <img src="{{ chosen[1].link }}" />
+      </div>
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+
+    <div style="clear:both;"><div></div></div>
+  </div>
+
+  <!-- content -->
+  <div id="id_content">
+    <!-- module -->
+    <div class="module">
+      <div class="inner centered title-status">
+        <ul>
+          <li>Was</li>
+          <li>Wo</li>
+          <li class="active">Wann</li>
+        </ul>
+
+        <div style="clear:both;"><div></div></div>
+      </div>
+    </div>
+    <!-- module end -->
+
+    <!-- module -->
+    <div class="module">
+      <div class="inner inner-extra-intended boxed">
+        <div class="box-head">
+          <h3>Mietdauer wählen</h3>
+        </div>
+        <div class="inner-extra-intended">
+          <form>
+            <h6>Start der Miete</h6>
+            <div class="left">
+              <input
+                type="date"
+                id="start"
+                name="xxx"
+                placeholder="tt.mm.yyyy"
+                (change)="timeAdjust()"
+              />
+            </div>
+            <div class="right">
+              <!--
+            <select id="start-zeit" (change)="timeAdjust()">
+              <option>Uhrzeit</option>
+              <option>08:00</option>
+              <option>10:00</option>
+              <option>12:00</option>
+              <option>14:00</option>
+              <option>16:00</option>
+            </select>
+          -->
+              <input type="time" id="start-zeit" (change)="timeAdjust()" />
+            </div>
+            <div style="clear:both;"><div></div></div>
+            <p>Bitte wählen Sie den gewünschten Lieferzeitpunkt aus:</p>
+            <h6>Ende der Miete</h6>
+            <div id="mietende1">
+              <div class="left">
+                <input
+                  type="date"
+                  id="ende"
+                  name="xxx"
+                  placeholder="tt.mm.yyyy"
+                  (change)="timeAdjust()"
+                />
+              </div>
+              <div class="right">
+                <!--
+              <select id="ende-zeit" (change)="timeAdjust()">
+                <option>Uhrzeit</option>
+                <option>08:00</option>
+                <option>10:00</option>
+                <option>12:00</option>
+                <option>14:00</option>
+                <option>16:00</option>
+              </select>
+            -->
+                <input type="time" id="ende-zeit" (change)="timeAdjust()" />
+              </div>
+            </div>
+            <div style="clear:both;"><div></div></div>
+            <div class="radio-checkbox-wrapper" id="mietende2">
+              <label class="with-info"
+                >Ende der Miete offen
+                <a
+                  data-fancybox
+                  data-src="#id_modal_info"
+                  href="javascript:void(0);"
+                  class="info"
+                  ><span>Info</span></a
+                >
+                <input
+                  type="checkbox"
+                  name="xxx"
+                  value="OK"
+                  id="the_end"
+                  (change)="timeAdjust()"
+                />
+                <span class="checkmark checkmark-checkbox"></span>
+              </label>
+              <div style="clear:both;"><div></div></div>
+            </div>
+          </form>
+        </div>
+        <div class="info-box" id="hinweis" style="display:none">
+          <h6>Hinweis</h6>
+          <p>
+            Innerhalb Ihres angegebenen Mietzeitraumes befinden sich ein oder
+            mehrere Wochenenden (Feiertage) - Möchten Sie das Gerät auch am
+            Wochenende (Feiertag) nutzen?
+          </p>
+          <div class="radio-checkbox-wrapper">
+            <label
+              >Nutzung auch am Wochenende
+              <input
+                type="checkbox"
+                name="xxx"
+                value="OK"
+                id="hinweis_check"
+                (change)="timeAdjust()"
+              />
+              <span class="checkmark checkmark-checkbox"></span>
+            </label>
+            <div style="clear:both;"><div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="inner inner-extra-intended boxed" id="calender">
+        <div class="box-head">
+          <h3>Günstigere Alternativen finden</h3>
+        </div>
+        <div class="inner-extra-intended">
+          <div class="calender" id="verwaltung_calender"></div>
+          <div class="centered">
+            <a
+              (click)="left()"
+              class="btn middle-space-btn"
+              id="left_arrow"
+              data-src="0"
+              style="width:min-content"
+              ><<</a
+            ><a
+              (click)="right()"
+              class="btn"
+              id="right_arrow"
+              data-src="13"
+              style="width:min-content"
+              >>></a
+            >
+          </div>
+        </div>
+        <div style="clear:both;"><div></div></div>
+      </div>
+      <div
+        class="inner inner-extra-intended boxed"
+        id="empfehlung1b"
+        style="display:none"
+      >
+        <div class="box-head">
+          <h3>Empfehlung</h3>
+        </div>
+        <div class="inner-extra-intended">
+          <div id="empfehlung"></div>
+        </div>
+        <div style="clear:both;"><div></div></div>
+      </div>
+
+      <div
+        class="inner inner-extra-intended boxed"
+        id="alternativen1b"
+        style="display:none"
+      >
+        <div class="box-head">
+          <h3>Alternativen</h3>
+        </div>
+        <div class="inner-extra-intended">
+          <div id="alternativen"></div>
+        </div>
+        <div style="clear:both;"><div></div></div>
+      </div>
+    </div>
+
+    <!-- module end -->
+
+    <!-- module -->
+    <div class="module centered">
+      <div class="inner inner-intended">
+        <div class="centered">
+          <a
+            [routerLink]="['/mietprozess/standorte', product['slug']]"
+            class="btn middle-space-btn"
+            >Zurück</a
+          >
+
+          <a class="btn" id="weiter">Weiter</a>
+        </div>
+
+        <div style="clear:both;"><div></div></div>
+      </div>
+    </div>
+    <!-- module end -->
+
+    <!-- image -->
+    <div class="module full">
+      <img
+        src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/image.jpg"
+        (load)="onload_zeit()"
+        alt="image"
+        width=""
+        height=""
+      />
+    </div>
+    <!-- image end -->
+
+    <!-- image -->
+    <div class="module black">
+      <div class="inner inner-intended">
+        <div class="left">
+          <div class="inner-small">
+            <h3>Newsletter</h3>
+
+            <p>
+              Melden Sie sich jetzt unverbindlich für unseren Newsletter an, um
+              keine Highlights mehr zu verpassen. Wir halten Sie mit
+              Produktneuheiten, Gerken Highlights, Rabattaktionen und vielen
+              Weiteren Informationen auf dem Laufenden!
+            </p>
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="inner-small">
+            <form>
+              <input type="email" name="email" placeholder="E-Mail" />
+
+              <div class="radio-checkbox-wrapper">
+                <label
+                  >Durch Absenden dieses Formulars erklärst Du dich mit der
+                  Speicherung und Verarbeitung Deiner Daten einverstanden.
+                  <a href="#">Weitere Informationen zum Datenschutz</a>.
+                  <input
+                    type="checkbox"
+                    name="DSGVO"
+                    value="OK"
+                    required="required"
+                  />
+                  <span class="checkmark checkmark-checkbox"></span>
+                </label>
+                <div style="clear:both;"><div></div></div>
+              </div>
+
+              <input type="submit" name="submit" value="Abonnieren" />
+            </form>
+          </div>
+        </div>
+
+        <div style="clear:both;"><div></div></div>
+      </div>
+    </div>
+    <!-- image end -->
+
+    <div style="clear:both;"><div></div></div>
+  </div>
+</div>
+<!-- Mietprozess Zeitauswahl END-->
+<!-- Mietprozess Standort -->
+<!-- https://diesdas.codersunlimited.de/diesdas/templates/mietprozess-4-5.html -->
+<div class="mietprozess" *ngIf="mode == 'standorte' && product">
+  <!-- Modals -->
+  <div class="modal" id="id_modal_info">
+    <h3>Lorem ipsum</h3>
+
+    <p>
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+      clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+      amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+      nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+      diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+      Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+      sit amet.
+    </p>
+
+    <div style="clear:both;"><div></div></div>
+  </div>
+  <!-- Modals END-->
+  <!-- title -->
+  <div class="module red">
+    <div class="inner title">
+      <h1>{{ product['hauptkategorie'] }} mieten</h1>
+
+      <div id="id_title_image">
+        <img
+          src="{{ chosen[1].link }}"
+          title="{{ chosen[1].title }}"
+          *ngIf="chosen[1]"
+        />
+      </div>
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+
+    <div style="clear:both;"><div></div></div>
+  </div>
+
+  <!-- content -->
+  <div id="id_content">
+    <!-- module -->
+    <div class="module">
+      <div class="inner centered title-status">
+        <ul>
+          <li>Was</li>
+          <li class="active">Wo</li>
+          <li>Wann</li>
+        </ul>
+
+        <div style="clear:both;"><div></div></div>
+      </div>
+    </div>
+    <!-- module end -->
+
+    <!-- module -->
+    <div class="module">
+      <div class="inner inner-extra-intended boxed">
+        <div class="box-head">
+          <h3>Lieferung oder Abholung?</h3>
+        </div>
+
+        <div class="inner-extra-intended">
+          <form onsubmit="event.preventDefault();">
+            <div class="radio-checkbox-wrapper">
+              <div class="radio-wrapper">
+                <label class="with-info"
+                  >Lieferung durch Gerken
+                  <a
+                    data-fancybox
+                    data-src="#id_modal_info"
+                    href="javascript:void(0);"
+                    class="info"
+                    ><span>Info</span></a
+                  >
+                  <input
+                    type="radio"
+                    name="wo"
+                    value="Lieferung"
+                    checked="checked"
+                    id="lieferung"
+                    (change)="onChangeStandort()"
+                  />
+                  <span class="checkmark checkmark-radio"></span>
+                </label>
+
+                <div id="id_wo_lieferung">
+                  <div class="radio-checkbox-wrapper">
+                    <label
+                      >Bedienung durch Gerken
+                      <input
+                        type="checkbox"
+                        name="xxx"
+                        value="OK"
+                        id="bedienung"
+                      />
+                      <span class="checkmark checkmark-checkbox"></span>
+                    </label>
+                    <div style="clear:both;"><div></div></div>
+                  </div>
+                </div>
+              </div>
+              <div class="radio-wrapper">
+                <label
+                  >Abholung in einer Filiale
+                  <input
+                    type="radio"
+                    name="wo"
+                    value="Abholung"
+                    id="abholung"
+                    (change)="onChangeStandort()"
+                  />
+                  <span class="checkmark checkmark-radio"></span>
+                </label>
+              </div>
+              <div style="clear:both;"><div></div></div>
+            </div>
+            <div id="id_wo_abholung" class="centered" style="display: none;">
+              <div class="search-box">
+                <form onsubmit="event.preventDefault();">
+                  <input
+                    type="text"
+                    name="search"
+                    placeholder="PLZ eingeben..."
+                    id="searchinput"
+                    maxlength="5"
+                    (input)="checkInt()"
+                  />
+                  <!--
+              <input
+                type="submit"
+                name="submit"
+                value=""
+                (click)="requestStandorte()"
+              />
+              -->
+                </form>
+              </div>
+
+              <div class="radio-checkbox-wrapper" id="standort_output">
+                <div class="radio-wrapper">
+                  <label
+                    >Gerken Arbeitsbühnen GmbH<br />
+                    Alte Gießerei 12<br />
+                    40591 Düsseldorf<br />
+                    Entfernung zur gewählten PLZ: DUMMY km
+                    <input type="radio" name="filiale" value="1" />
+                    <span class="checkmark checkmark-radio"></span>
+                  </label>
+                </div>
+                <div style="clear:both;"><div></div></div>
+                <div class="radio-wrapper">
+                  <label
+                    >Gerken Arbeitsbühnen GmbH<br />
+                    Alte Gießerei 12<br />
+                    40591 Düsseldorf<br />
+                    Entfernung zur gewählten PLZ: DUMMY km
+                    <input type="radio" name="filiale" value="2" />
+                    <span class="checkmark checkmark-radio"></span>
+                  </label>
+                </div>
+                <div style="clear:both;"><div></div></div>
+              </div>
+            </div>
+            <div id="id_wo_lieferung2" class="centered" style="display: block;">
+              <p></p>
+            </div>
+          </form>
+        </div>
+
+        <div style="clear:both;"><div></div></div>
+      </div>
+    </div>
+    <!-- module end -->
+
+    <!-- module -->
+    <div class="module centered">
+      <div class="inner inner-intended">
+        <div class="centered">
+          <a (click)="backsp()" class="btn middle-space-btn">Zurück</a>
+
+          <a (click)="searchStandort()" class="btn">Weiter</a>
+        </div>
+
+        <div style="clear:both;"><div></div></div>
+      </div>
+    </div>
+    <!-- module end -->
+
+    <!-- image -->
+    <div class="module full">
+      <img
+        src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/image.jpg"
+        (load)="onload_standorte()"
+        alt="image"
+        width=""
+        height=""
+      />
+    </div>
+    <!-- image end -->
+
+    <!-- image -->
+    <div class="module black">
+      <div class="inner inner-intended">
+        <div class="left">
+          <div class="inner-small">
+            <h3>Newsletter</h3>
+
+            <p>
+              Melden Sie sich jetzt unverbindlich für unseren Newsletter an, um
+              keine Highlights mehr zu verpassen. Wir halten Sie mit
+              Produktneuheiten, Gerken Highlights, Rabattaktionen und vielen
+              Weiteren Informationen auf dem Laufenden!
+            </p>
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="inner-small">
+            <form>
+              <input type="email" name="email" placeholder="E-Mail" />
+
+              <div class="radio-checkbox-wrapper">
+                <label
+                  >Durch Absenden dieses Formulars erklärst Du dich mit der
+                  Speicherung und Verarbeitung Deiner Daten einverstanden.
+                  <a href="#">Weitere Informationen zum Datenschutz</a>.
+                  <input
+                    type="checkbox"
+                    name="DSGVO"
+                    value="OK"
+                    required="required"
+                  />
+                  <span class="checkmark checkmark-checkbox"></span>
+                </label>
+                <div style="clear:both;"><div></div></div>
+              </div>
+
+              <input type="submit" name="submit" value="Abonnieren" />
+            </form>
+          </div>
+        </div>
+
+        <div style="clear:both;"><div></div></div>
+      </div>
+    </div>
+    <!-- image end -->
+
+    <div style="clear:both;"><div></div></div>
+  </div>
+</div>
+<!-- Mietprozess Standort END-->
+<!-- Mietprozess Bestellung Abschluss -->
+<!-- https://diesdas.codersunlimited.de/diesdas/templates/mietprozess-8.html -->
+<div class="mietprozess" *ngIf="mode == 'abschluss'">
+  <!-- Modals -->
+  <div class="modal" id="id_modal_info">
+    <h3>Lorem ipsum</h3>
+
+    <p>
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+      clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+      amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+      nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+      diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+      Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+      sit amet.
+    </p>
+
+    <div style="clear:both;"><div></div></div>
+  </div>
+
+  <div class="modal" id="id_modal_adress" style="display: none;">
+    <h3 id="new_title">Rechnungsadresse anlegen</h3>
+
+    <form onsubmit="event.preventDefault();">
+      <label>Name/Firma</label>
+      <input
+        type="text"
+        name="xxx"
+        placeholder="Max Mustermann"
+        required="required"
+        id="new_name"
+      />
+
+      <label>Zusätzliche Information zur Adresse</label>
+      <input type="email" name="xxx" placeholder="" id="new_zusatz" />
+
+      <label>Str./Nr.*</label>
+      <input
+        type="email"
+        name="xxx"
+        placeholder="Musterstr. 11"
+        required="required"
+        id="new_strasse"
+      />
+
+      <div class="form-left">
+        <label>PLZ*</label>
+        <input
+          type="email"
+          name="xxx"
+          placeholder="11111"
+          required="required"
+          id="new_plz"
+        />
+      </div>
+
+      <div class="form-right">
+        <label>Ort*</label>
+        <input
+          type="email"
+          name="xxx"
+          placeholder="Musterstadt"
+          required="required"
+          id="new_ort"
+        />
+      </div>
+
+      <label>Land</label>
+      <select id="new_land">
+        <option>Deutschland</option>
+        <option>Belgien</option>
+        <option>Niederlande</option>
+      </select>
+      <input type="hidden" id="new_id" value="" />
+      <input type="hidden" id="new_aktive" value="" />
+      <div class="centered space">
+        <input
+          type="submit"
+          name="submit"
+          value="Speichern"
+          (click)="saveRechnungsadresse()"
+        />
+      </div>
+    </form>
+
+    <div style="clear:both;"><div></div></div>
+  </div>
+  <!-- Modals END-->
+  <!-- title -->
+  <div class="module red">
+    <div class="inner title">
+      <h1>Kostenübersicht</h1>
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+
+    <div style="clear:both;"><div></div></div>
+  </div>
+
+  <!-- content -->
+  <div id="id_content">
+    <!-- module -->
+    <div class="module">
+      <div class="inner centered title-status">
+        <ul>
+          <li class="active">Was</li>
+          <li class="active">Wo</li>
+          <li class="active">Wann</li>
+        </ul>
+
+        <div style="clear:both;"><div></div></div>
+      </div>
+    </div>
+    <!-- module end -->
+    <form>
+      <!-- module -->
+      <div class="module">
+        <div class="inner inner-extra-intended boxed">
+          <div class="left-3-5">
+            <div id="positionoutlet"></div>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Gesamt Netto</td>
+                  <td id="netto">€</td>
+                </tr>
+                <tr>
+                  <td>MwSt 19%</td>
+                  <td id="steuer">€</td>
+                </tr>
+                <tr class="sum">
+                  <td>Gesamt</td>
+                  <td id="gesamtpreis">€</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h6>Hinweise</h6>
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et accusam et justo duo
+              dolores.
+            </p>
+
+            <table>
+              <tbody>
+                <tr>
+                  <td>verbrauchter Dieselkraftstoff inkl. Tankservice</td>
+                  <td>2,21€ z.Zt./Liter</td>
+                </tr>
+                <tr>
+                  <td>verbrauchter Benzinkraftstoff inkl. Tankservice</td>
+                  <td>2,48€ z.Zt./Liter</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h6>Anmerkungen zu Ihrer Bestellung</h6>
+            <textarea name="textarea" placeholder="an Gerken..."></textarea>
+          </div>
+
+          <div class="right-2-5">
+            <div class="paybox">
+              <div class="radio-checkbox-wrapper">
+                <label class="with-image"
+                  ><strong>PayPal</strong><br />Lorem ipsum dolor sit amet,
+                  consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                  invidunt
+                  <input type="radio" name="payment" value="1" checked />
+                  <span class="checkmark checkmark-radio"></span>
+                  <img
+                    src="https://diesdas.codersunlimited.de/diesdas/assets/images/payment/paypal.svg"
+                  />
+                </label>
+                <label class="with-image"
+                  ><strong>Kreditkarte</strong><br />Lorem ipsum dolor sit amet,
+                  consetetur sadipscing elitr, sed diam nonumy eirmod
+                  <input type="radio" name="payment" value="2" />
+                  <span class="checkmark checkmark-radio"></span>
+                  <img
+                    src="https://diesdas.codersunlimited.de/diesdas/assets/images/payment/creditcard.svg"
+                  />
+                </label>
+                <label class="with-image"
+                  ><strong>Überweisung</strong><br />Lorem ipsum dolor sit amet,
+                  consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                  <input type="radio" name="payment" value="2" />
+                  <span class="checkmark checkmark-radio"></span>
+                  <img
+                    src="https://diesdas.codersunlimited.de/diesdas/assets/images/payment/ueberweisung.svg"
+                  />
+                </label>
+                <label class="with-image"
+                  ><strong>SEPA Lastschrift</strong><br />Lorem ipsum dolor sit
+                  amet, consetetur sadipscing elitr, sed diam nonumy
+                  <input type="radio" name="payment" value="2" />
+                  <span class="checkmark checkmark-radio"></span>
+                  <img
+                    src="https://diesdas.codersunlimited.de/diesdas/assets/images/payment/sepa.svg"
+                  />
+                </label>
+                <label class="with-image"
+                  ><strong>Rechnung</strong><br />Lorem ipsum dolor sit amet,
+                  consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                  invidunt
+                  <input type="radio" name="payment" value="2" />
+                  <span class="checkmark checkmark-radio"></span>
+                  <img
+                    src="https://diesdas.codersunlimited.de/diesdas/assets/images/payment/rechnung.svg"
+                  />
+                </label>
+                <div style="clear:both;"><div></div></div>
+              </div>
+            </div>
+
+            <h3>Rechnungsadressen</h3>
+
+            <div class="radio-checkbox-wrapper" id="output_rechnungsadressen">
+              <label
+                >Test Empfänger<br />Teststr. 11<br />11111 Testdort
+                <input
+                  type="radio"
+                  name="rechnungsadresse"
+                  value="1"
+                  checked="checked"
+                />
+                <span class="checkmark checkmark-radio"></span>
+              </label>
+              <label
+                >Muster Empfänger<br />Musterstr. 22<br />22222 Musterdort
+                <input type="radio" name="rechnungsadresse" value="2" />
+                <span class="checkmark checkmark-radio"></span>
+              </label>
+              <div style="clear:both;"><div></div></div>
+            </div>
+
+            <a (click)="newRechnungsadresse()" class="pointi"
+              >Neue Rechnungsadresse anlegen &raquo;</a
+            >
+          </div>
+
+          <div style="clear:both;"><div></div></div>
+        </div>
+      </div>
+      <!-- module end -->
+
+      <!-- module -->
+      <div class="module centered">
+        <div class="inner inner-intended">
+          <div class="centered">
+            <!-- 
+          <a href="mietprozess-7b.html" class="btn middle-space-btn"
+            >Zurück</a
+          >
+          <a href="rechnungsadressen.html" class="btn middle-space-btn"
+            >Weiter</a
+          >
+          -->
+            <a (click)="orderback()" id="back" class="btn middle-space-btn"
+              >Zurück</a
+            >
+            <a (click)="bestellen()" class="btn pointi">Jetzt bestellen</a>
+          </div>
+
+          <div style="clear:both;"><div></div></div>
+        </div>
+      </div>
+      <!-- module end -->
+    </form>
+
+    <!-- image -->
+    <div class="module full">
+      <img
+        src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/image.jpg"
+        alt="image"
+        width=""
+        height=""
+        (load)="loadAbschluss()"
+      />
+    </div>
+    <!-- image end -->
+
+    <!-- image -->
+    <div class="module black">
+      <div class="inner inner-intended">
+        <div class="left">
+          <div class="inner-small">
+            <h3>Newsletter</h3>
+
+            <p>
+              Melden Sie sich jetzt unverbindlich für unseren Newsletter an, um
+              keine Highlights mehr zu verpassen. Wir halten Sie mit
+              Produktneuheiten, Gerken Highlights, Rabattaktionen und vielen
+              Weiteren Informationen auf dem Laufenden!
+            </p>
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="inner-small">
+            <form>
+              <input type="email" name="email" placeholder="E-Mail" />
+
+              <div class="radio-checkbox-wrapper">
+                <label
+                  >Durch Absenden dieses Formulars erklärst Du dich mit der
+                  Speicherung und Verarbeitung Deiner Daten einverstanden.
+                  <a href="#">Weitere Informationen zum Datenschutz</a>.
+                  <input
+                    type="checkbox"
+                    name="DSGVO"
+                    value="OK"
+                    required="required"
+                  />
+                  <span class="checkmark checkmark-checkbox"></span>
+                </label>
+                <div style="clear:both;"><div></div></div>
+              </div>
+
+              <input type="submit" name="submit" value="Abonnieren" />
+            </form>
+          </div>
+        </div>
+
+        <div style="clear:both;"><div></div></div>
+      </div>
+    </div>
+    <!-- image end -->
+
+    <div style="clear:both;"><div></div></div>
+  </div>
+</div>
+<!-- Mietprozess Bestellung Abschluss END-->
+<div style="display:none">
+  <img
+    src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/product.jpg"
+    (load)="onload()"
+  />
+</div>

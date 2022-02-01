@@ -1,0 +1,21 @@
+<div>
+  <app-top-bar></app-top-bar>
+  <!-- page -->
+  <div id="id_page">
+    <div class="container">
+      <router-outlet (activate)="onActivate($event)"></router-outlet>
+    </div>
+    <app-footer></app-footer>
+  </div>
+</div>
+<div style="display:none">
+  <img
+    src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/product.jpg"
+    (load)="load()"
+  />
+</div>
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->

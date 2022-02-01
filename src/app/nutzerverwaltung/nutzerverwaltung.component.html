@@ -1,0 +1,627 @@
+<!--Modals-->
+<div class="modal" id="id_modal_user" style="display: none;">
+  <h3>Nutzer anlegen</h3>
+
+  <form onsubmit="event.preventDefault();">
+    <label>Name/Firma</label>
+    <input
+      type="text"
+      name="xxx"
+      placeholder="Max Mustermann"
+      required="required"
+      id="new_name"
+    />
+
+    <label>E-Mail</label>
+    <input
+      type="email"
+      name="xxx"
+      placeholder=""
+      required="required"
+      id="new_email"
+    />
+
+    <div class="centered space">
+      <input type="submit" name="submit" (click)="cry()" value="Speichern" />
+    </div>
+  </form>
+
+  <div style="clear:both;"><div></div></div>
+</div>
+
+<div class="modal" id="id_modal_delete" style="display: none;">
+  <h3>Sind Sie sicher, dass Sie diesen Nutzer löschen wollen?</h3>
+  <form onsubmit="event.preventDefault();">
+    <div class="centered space">
+      <input
+        type="submit"
+        name="submit"
+        class="delete"
+        (click)="cry2()"
+        value="Ja"
+      />
+      <input
+        type="submit"
+        name="submit"
+        class="delete"
+        (click)="cry3()"
+        value="Nein"
+      />
+    </div>
+  </form>
+</div>
+
+<div class="modal" id="id_modal_info">
+  <h3>Info</h3>
+  <p>
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+    voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+    clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+    amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+    diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+    clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+    amet.
+  </p>
+
+  <div style="clear:both;"><div></div></div>
+</div>
+<!--Modals End-->
+<div id="generell" style="display:block">
+  <div class="module red">
+    <div class="inner title">
+      <h1>Administration</h1>
+      <!--  
+<div id="id_title_image">
+  <img
+    src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/product-group-thumbnail.jpg"
+  />
+</div>
+-->
+      <div style="clear:both;"><div></div></div>
+    </div>
+
+    <div style="clear:both;"><div></div></div>
+  </div>
+  <div class="module">
+    <div class="inner inner-intended">
+      <h2 class="centered">
+        Nutzer verwalten
+        <a
+          data-fancybox
+          data-src="#id_modal_info"
+          data-options='{"touch" : false}'
+          href="javascript:void(0);"
+          class="info"
+          ><span>Info</span></a
+        >
+      </h2>
+      <div id="nutzertarget">
+        <div class="adress-box">
+          <p>
+            Test Nutzer<br />
+            <a href="mailto:test@nutzer.de">test@nutzer.de</a><br />
+          </p>
+          <a (click)="loadUser('1')" class="edit"><span>Edit</span></a>
+
+          <a href="#" class="delete"><span>Delete</span></a>
+
+          <div style="clear:both;"><div></div></div>
+        </div>
+      </div>
+
+      <div style="clear:both;"><div></div></div>
+
+      <div class="centered" *ngIf="!bratfisch">
+        <a
+          data-fancybox=""
+          data-src="#id_modal_user"
+          data-options='{"touch" : false}'
+          href="javascript:void(0);"
+          class="btn btn-outline"
+          style="display:none"
+          >//DEMO//Neuen Nutzer anlegen</a
+        >
+      </div>
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+  </div>
+</div>
+<div id="specific" style="display:none">
+  <!-- title -->
+  <div class="module red">
+    <div class="inner title">
+      <h1>Administration</h1>
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+
+    <div style="clear:both;"><div></div></div>
+  </div>
+
+  <!-- content -->
+  <div id="id_content">
+    <form>
+      <!-- module -->
+      <div class="module white">
+        <div class="inner inner-intended">
+          <a (click)="close()" class="btn">Zurück</a
+          ><a (click)="speichern()" class="btn plusright">Speichern</a>
+          <div class="left-1-3">
+            <form>
+              <h6 id="ad_username">Max Mustermann</h6>
+
+              <p>
+                <a id="ad_mail" href="mailto:max@mustermann.de"
+                  >max@mustermann.de</a
+                >
+              </p>
+
+              <div class="radio-checkbox-wrapper">
+                <label
+                  >Administrator
+                  <input
+                    type="checkbox"
+                    name="admin"
+                    value="1"
+                    required="required"
+                    class="additional"
+                    id="ad_admin"
+                  />
+                  <span class="checkmark checkmark-checkbox"></span>
+                </label>
+                <div style="clear:both;"><div></div></div>
+              </div>
+
+              <h6>Verwaltungsrechte</h6>
+
+              <div class="radio-checkbox-wrapper">
+                <label
+                  >Unternehmensdaten bearbeiten
+                  <input
+                    type="checkbox"
+                    name="unternehmensdaten"
+                    value="1"
+                    required="required"
+                    class="additional"
+                    id="ad_verwaltung1"
+                  />
+                  <span class="checkmark checkmark-checkbox"></span>
+                </label>
+                <div style="clear:both;"><div></div></div>
+              </div>
+
+              <div class="radio-checkbox-wrapper">
+                <label
+                  >Rechnungen ansehen
+                  <input
+                    type="checkbox"
+                    name="rechnungen"
+                    value="1"
+                    required="required"
+                    class="additional"
+                    id="ad_verwaltung2"
+                  />
+                  <span class="checkmark checkmark-checkbox"></span>
+                </label>
+                <div style="clear:both;"><div></div></div>
+              </div>
+
+              <div class="radio-checkbox-wrapper">
+                <label
+                  >Baustellen/Standorte verwalten
+                  <input
+                    type="checkbox"
+                    name="baustellen"
+                    value="1"
+                    required="required"
+                    class="additional"
+                    id="ad_verwaltung3"
+                  />
+                  <span class="checkmark checkmark-checkbox"></span>
+                </label>
+                <div style="clear:both;"><div></div></div>
+              </div>
+
+              <h6>Mietprozess</h6>
+
+              <div class="radio-checkbox-wrapper">
+                <label
+                  >Preise nicht anzeigen
+                  <input
+                    type="checkbox"
+                    name="preise"
+                    value="1"
+                    required="required"
+                    class="additional"
+                    id="ad_mietprozess1"
+                  />
+                  <span class="checkmark checkmark-checkbox"></span>
+                </label>
+                <div style="clear:both;"><div></div></div>
+              </div>
+
+              <div class="radio-checkbox-wrapper">
+                <label
+                  >Mietdauerverlängerung deaktivieren
+                  <input
+                    type="checkbox"
+                    name="mietdauerverlaengerung"
+                    value="1"
+                    required="required"
+                    class="additional"
+                    id="ad_mietprozess2"
+                  />
+                  <span class="checkmark checkmark-checkbox"></span>
+                </label>
+                <div style="clear:both;"><div></div></div>
+              </div>
+
+              <div class="radio-checkbox-wrapper">
+                <label
+                  >Auslösen von Bestellungen deaktivieren
+                  <input
+                    type="checkbox"
+                    name="bestellen"
+                    value="1"
+                    required="required"
+                    class="additional"
+                    id="ad_mietprozess3"
+                  />
+                  <span class="checkmark checkmark-checkbox"></span>
+                </label>
+                <div style="clear:both;"><div></div></div>
+              </div>
+
+              <div class="radio-checkbox-wrapper">
+                <label
+                  >Verfügbare Geräteauswahl einschränken
+                  <input
+                    type="checkbox"
+                    name="auswahl"
+                    value="1"
+                    required="required"
+                    class="additional"
+                    id="ad_mietprozess4"
+                  />
+                  <span class="checkmark checkmark-checkbox"></span>
+                </label>
+                <div style="clear:both;"><div></div></div>
+              </div>
+            </form>
+          </div>
+
+          <div class="right-2-3">
+            <h6>Produktkategorien</h6>
+
+            <div class="accordeon-wrapper">
+              <ul
+                id="produktkategorien"
+                class="produktkategorien accordeon accordeon-with-checkboxes"
+              >
+                <li>
+                  <input type="checkbox" class="accordeon-checkbox" checked />
+                  <a href="javascript:void(0);" class="accordeon-link">
+                    <div class="radio-checkbox-wrapper">
+                      <label
+                        >Arbeitsbühnen
+                        <input
+                          type="checkbox"
+                          name="a3"
+                          value="1"
+                          required="required"
+                        />
+                        <span class="checkmark checkmark-checkbox"></span>
+                      </label>
+                      <div style="clear:both;"><div></div></div></div
+                  ></a>
+                  <div class="content">
+                    <div class="content-inner">
+                      <div class="accordeon-wrapper">
+                        <ul class="accordeon">
+                          <li>
+                            <input
+                              type="checkbox"
+                              class="accordeon-checkbox"
+                              checked
+                            />
+                            <a
+                              href="javascript:void(0);"
+                              class="accordeon-link"
+                            >
+                              <div class="radio-checkbox-wrapper">
+                                <label
+                                  >LKW Arbeitsbühnen
+                                  <input
+                                    type="checkbox"
+                                    name="a3"
+                                    value="1"
+                                    required="required"
+                                  />
+                                  <span
+                                    class="checkmark checkmark-checkbox"
+                                  ></span>
+                                </label>
+                                <div style="clear:both;"><div></div></div></div
+                            ></a>
+                            <div class="content">
+                              <div class="content-inner">
+                                <div class="radio-checkbox-wrapper">
+                                  <label
+                                    >GL 14
+                                    <input
+                                      type="checkbox"
+                                      name="a3"
+                                      value="1"
+                                      required="required"
+                                    />
+                                    <span
+                                      class="checkmark checkmark-checkbox"
+                                    ></span>
+                                  </label>
+                                  <div style="clear:both;"><div></div></div>
+                                </div>
+
+                                <div class="radio-checkbox-wrapper">
+                                  <label
+                                    >GL 16
+                                    <input
+                                      type="checkbox"
+                                      name="a3"
+                                      value="1"
+                                      required="required"
+                                    />
+                                    <span
+                                      class="checkmark checkmark-checkbox"
+                                    ></span>
+                                  </label>
+                                  <div style="clear:both;"><div></div></div>
+                                </div>
+
+                                <div style="clear: both;"><div></div></div>
+                              </div>
+                            </div>
+                          </li>
+
+                          <li>
+                            <input
+                              type="checkbox"
+                              class="accordeon-checkbox"
+                              checked
+                            />
+                            <a
+                              href="javascript:void(0);"
+                              class="accordeon-link"
+                            >
+                              <div class="radio-checkbox-wrapper">
+                                <label
+                                  >Anhänger Arbeitsbühnen
+                                  <input
+                                    type="checkbox"
+                                    name="a3"
+                                    value="1"
+                                    required="required"
+                                  />
+                                  <span
+                                    class="checkmark checkmark-checkbox"
+                                  ></span>
+                                </label>
+                                <div style="clear:both;"><div></div></div></div
+                            ></a>
+                            <div class="content">
+                              <div class="content-inner">
+                                <p>
+                                  Lorem ipsum dolor sit amet, consectetur
+                                  adipisicing elit, sed do eiusmod tempor
+                                  incididunt ut labore et dolore magna aliqua.
+                                  Ut enim ad minim veniam, quis nostrud
+                                  exercitation ullamco laboris nisi ut aliquip
+                                  ex ea commodo consequat. Duis aute irure dolor
+                                  in reprehenderit in voluptate velit esse
+                                  cillum dolore eu fugiat nulla pariatur.
+                                  Excepteur sint occaecat cupidatat non
+                                  proident, sunt in culpa qui officia deserunt
+                                  mollit anim id est laborum.
+                                </p>
+
+                                <div style="clear: both;"><div></div></div>
+                              </div>
+                            </div>
+                          </li>
+
+                          <li>
+                            <input
+                              type="checkbox"
+                              class="accordeon-checkbox"
+                              checked
+                            />
+                            <a
+                              href="javascript:void(0);"
+                              class="accordeon-link"
+                            >
+                              <div class="radio-checkbox-wrapper">
+                                <label
+                                  >Spezial Arbeitsbühnen
+                                  <input
+                                    type="checkbox"
+                                    name="a3"
+                                    value="1"
+                                    required="required"
+                                  />
+                                  <span
+                                    class="checkmark checkmark-checkbox"
+                                  ></span>
+                                </label>
+                                <div style="clear:both;"><div></div></div></div
+                            ></a>
+                            <div class="content">
+                              <div class="content-inner">
+                                <p>
+                                  Lorem ipsum dolor sit amet, consectetur
+                                  adipisicing elit, sed do eiusmod tempor
+                                  incididunt ut labore et dolore magna aliqua.
+                                  Ut enim ad minim veniam, quis nostrud
+                                  exercitation ullamco laboris nisi ut aliquip
+                                  ex ea commodo consequat. Duis aute irure dolor
+                                  in reprehenderit in voluptate velit esse
+                                  cillum dolore eu fugiat nulla pariatur.
+                                  Excepteur sint occaecat cupidatat non
+                                  proident, sunt in culpa qui officia deserunt
+                                  mollit anim id est laborum.
+                                </p>
+
+                                <div style="clear: both;"><div></div></div>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div style="clear: both;"><div></div></div>
+                    </div>
+                  </div>
+                </li>
+
+                <li>
+                  <input type="checkbox" class="accordeon-checkbox" checked />
+                  <a href="javascript:void(0);" class="accordeon-link">
+                    <div class="radio-checkbox-wrapper">
+                      <label
+                        >Gabelstapler
+                        <input
+                          type="checkbox"
+                          name="a3"
+                          value="1"
+                          required="required"
+                        />
+                        <span class="checkmark checkmark-checkbox"></span>
+                      </label>
+                      <div style="clear:both;"><div></div></div></div
+                  ></a>
+                  <div class="content">
+                    <div class="content-inner">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit, sed do eiusmod tempor incididunt ut labore et
+                        dolore magna aliqua. Ut enim ad minim veniam, quis
+                        nostrud exercitation ullamco laboris nisi ut aliquip ex
+                        ea commodo consequat. Duis aute irure dolor in
+                        reprehenderit in voluptate velit esse cillum dolore eu
+                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit
+                        anim id est laborum.
+                      </p>
+
+                      <div style="clear: both;"><div></div></div>
+                    </div>
+                  </div>
+                </li>
+
+                <li>
+                  <input type="checkbox" class="accordeon-checkbox" checked />
+                  <a href="javascript:void(0);" class="accordeon-link">
+                    <div class="radio-checkbox-wrapper">
+                      <label
+                        >Lorem ipsum dolor
+                        <input
+                          type="checkbox"
+                          name="a3"
+                          value="1"
+                          required="required"
+                        />
+                        <span class="checkmark checkmark-checkbox"></span>
+                      </label>
+                      <div style="clear:both;"><div></div></div></div
+                  ></a>
+                  <div class="content">
+                    <div class="content-inner">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit, sed do eiusmod tempor incididunt ut labore et
+                        dolore magna aliqua. Ut enim ad minim veniam, quis
+                        nostrud exercitation ullamco laboris nisi ut aliquip ex
+                        ea commodo consequat. Duis aute irure dolor in
+                        reprehenderit in voluptate velit esse cillum dolore eu
+                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit
+                        anim id est laborum.
+                      </p>
+
+                      <div style="clear: both;"><div></div></div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div style="clear:both;"><div></div></div>
+        </div>
+      </div>
+      <!-- module end -->
+    </form>
+
+    <!-- image -->
+    <div class="module full">
+      <img
+        src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/image.jpg"
+        alt="image"
+        width=""
+        height=""
+        (load)="onload()"
+      />
+    </div>
+    <!-- image end -->
+
+    <!-- image -->
+    <div class="module black">
+      <div class="inner inner-intended">
+        <div class="left">
+          <div class="inner-small">
+            <h3>Newsletter</h3>
+
+            <p>
+              Melden Sie sich jetzt unverbindlich für unseren Newsletter an, um
+              keine Highlights mehr zu verpassen. Wir halten Sie mit
+              Produktneuheiten, Gerken Highlights, Rabattaktionen und vielen
+              Weiteren Informationen auf dem Laufenden!
+            </p>
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="inner-small">
+            <form>
+              <input type="email" name="email" placeholder="E-Mail" />
+
+              <div class="radio-checkbox-wrapper">
+                <label
+                  >Durch Absenden dieses Formulars erklärst Du dich mit der
+                  Speicherung und Verarbeitung Deiner Daten einverstanden.
+                  <a href="#">Weitere Informationen zum Datenschutz</a>.
+                  <input
+                    type="checkbox"
+                    name="DSGVO"
+                    value="OK"
+                    required="required"
+                  />
+                  <span class="checkmark checkmark-checkbox"></span>
+                </label>
+                <div style="clear:both;"><div></div></div>
+              </div>
+
+              <input type="submit" name="submit" value="Abonnieren" />
+            </form>
+          </div>
+        </div>
+
+        <div style="clear:both;"><div></div></div>
+      </div>
+    </div>
+    <!-- image end -->
+
+    <div style="clear:both;"><div></div></div>
+  </div>
+</div>

@@ -1,0 +1,159 @@
+<!-- title -->
+<div class="module red">
+  <div class="inner title">
+    <h1>Rechnungshistorie</h1>
+
+    <div style="clear:both;"><div></div></div>
+  </div>
+
+  <div style="clear:both;"><div></div></div>
+</div>
+
+<!-- content -->
+<div id="id_content">
+  <form>
+    <!-- module -->
+    <div class="module white">
+      <div class="inner inner-intended">
+        <h2 class="centered">Ihre Rechnungen</h2>
+
+        <div class="left">
+          <form>
+            <label>Zeitraum</label>
+            <select id="Zeitraum">
+              <option>Option I</option>
+              <option>Option II</option>
+            </select>
+
+            <label>Typ</label>
+            <select id="Typ">
+              <option>Option I</option>
+              <option>Option II</option>
+            </select>
+
+            <label>Standort</label>
+            <select id="Standort">
+              <option>Option I</option>
+              <option>Option II</option>
+            </select>
+          </form>
+        </div>
+
+        <div class="right">
+          <div id="output">
+            <a href="#" target="_blank" class="invoice">
+              <p class="nr">
+                <strong>Lorem Ipsum #123456</strong><br />
+                11.11.2011
+              </p>
+
+              <p class="amount"><strong>321,27€</strong></p>
+
+              <div style="clear:both;"><div></div></div>
+            </a>
+
+            <a href="#" target="_blank" class="invoice">
+              <p class="nr">
+                <strong>Lorem Ipsum #123456</strong><br />
+                11.11.2011
+              </p>
+
+              <p class="amount"><strong>321,27€</strong></p>
+
+              <div style="clear:both;"><div></div></div>
+            </a>
+
+            <a href="#" target="_blank" class="invoice">
+              <p class="nr">
+                <strong>Lorem Ipsum #123456</strong><br />
+                11.11.2011
+              </p>
+
+              <p class="amount"><strong>321,27€</strong></p>
+
+              <div style="clear:both;"><div></div></div>
+            </a>
+
+            <a href="#" target="_blank" class="invoice">
+              <p class="nr">
+                <strong>Lorem Ipsum #123456</strong><br />
+                11.11.2011
+              </p>
+
+              <p class="amount"><strong>321,27€</strong></p>
+
+              <div style="clear:both;"><div></div></div>
+            </a>
+          </div>
+          <div class="more-wrapper" id="loadmorebutton">
+            <a (click)="loadLess()" id="less" class="less" style="display:none"
+              >Weniger anzeigen</a
+            >
+            <a (click)="loadMore()" id="more" class="more">Mehr anzeigen</a>
+          </div>
+        </div>
+
+        <div style="clear:both;"><div></div></div>
+      </div>
+    </div>
+    <!-- module end -->
+  </form>
+
+  <!-- image -->
+  <div class="module full">
+    <img
+      src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/image.jpg"
+      alt="image"
+      width=""
+      height=""
+      (load)="loadRechnungen()"
+    />
+  </div>
+  <!-- image end -->
+
+  <!-- image -->
+  <div class="module black">
+    <div class="inner inner-intended">
+      <div class="left">
+        <div class="inner-small">
+          <h3>Newsletter</h3>
+
+          <p>
+          Melden Sie sich jetzt unverbindlich für unseren Newsletter an, um keine Highlights mehr zu verpassen. Wir halten Sie mit Produktneuheiten, Gerken Highlights, Rabattaktionen und vielen Weiteren Informationen auf dem Laufenden!
+          </p>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="inner-small">
+          <form>
+            <input type="email" name="email" placeholder="E-Mail" />
+
+            <div class="radio-checkbox-wrapper">
+              <label
+                >Durch Absenden dieses Formulars erklärst Du dich mit der
+                Speicherung und Verarbeitung Deiner Daten einverstanden.
+                <a href="#">Weitere Informationen zum Datenschutz</a>.
+                <input
+                  type="checkbox"
+                  name="DSGVO"
+                  value="OK"
+                  required="required"
+                />
+                <span class="checkmark checkmark-checkbox"></span>
+              </label>
+              <div style="clear:both;"><div></div></div>
+            </div>
+
+            <input type="submit" name="submit" value="Abonnieren" />
+          </form>
+        </div>
+      </div>
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+  </div>
+  <!-- image end -->
+
+  <div style="clear:both;"><div></div></div>
+</div>

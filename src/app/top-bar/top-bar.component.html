@@ -1,0 +1,225 @@
+<div id="debug_menue" class="debug_menue">
+  <a href="javascript:void(0);" (click)="delete()" class="btn">Delete</a>
+  <a
+    (click)="overdrive2('true', 'produktdetailseite/gg-208-24-waklpg')"
+    class="btn"
+    >Redirect</a
+  >
+  <a [routerLink]="['/']" class="btn">Startseite</a>
+  <a (click)="overdrive3()" class="btn" id="ov3">Generate Direktlink</a>
+  <label id="ov4"></label>
+  <a (click)="bug1()" id="bugbtn" class="btn">Bugreport</a>
+  <div class="bugreport" id="bugreport">
+    <textarea id="comment">Beschreibung des Bugs</textarea>
+    <input
+      type="text"
+      list="sites"
+      id="place"
+      class="search"
+      placeholder="Seite"
+    />
+    <datalist id="sites">
+      <option>Startseite</option>
+      <option>Kundendaten</option>
+      <option>FAQ</option>
+      <option>Mietprozess</option>
+      <option>Nutzerverwaltung</option>
+      <option>Produktdetailseite</option>
+      <option>Rechnungshistorie</option>
+      <option>Registrierung</option>
+      <option>Standort</option>
+    </datalist>
+    <button class="btn" (click)="bug3()">Senden</button>
+  </div>
+  <div class="bugframe">
+    <div class="bug2" id="bug2" (click)="bug2()">V</div>
+  </div>
+</div>
+<div id="id_c2a" style="display:none">
+  <a class="btn middle-space-btn" (click)="orderresume()">
+    Bestellung fortsetzen
+  </a>
+  <a class="btn" (click)="orderbreak()"> Bestellung abbrechen </a>
+</div>
+
+<!--
+<div id="id_menu_wrapper" style="display: block;">
+  <div class="inner inner-intended">
+    <ul>
+      <li class="has-sub">
+        <a href="javascript:void(0);">Gerät mieten</a>
+        <ul class="sub">
+          <li><a [routerLink]="['/']">Gerät mieten</a></li>
+          <li><a [routerLink]="['nutzerverwaltung']">Nutzerverwaltung</a></li>
+          <li><a [routerLink]="['standorte']">Baustellen/Standorte</a></li>
+          <li><a [routerLink]="['rechnungshistorie']">Rechnungshistorie</a></li>
+          <li><a [routerLink]="['account']">Unternehmens-/Kundendaten</a></li>
+        </ul>
+      </li>
+      <li class="has-sub">
+        <a href="javascript:void(0);">Verkauf</a>
+        <ul class="sub">
+          <li><a href="#">Gerät verkaufen</a></li>
+          <li><a href="#">Lorem Ipsum</a></li>
+          <li><a href="#">Dolor amet sit</a></li>
+        </ul>
+      </li>
+      <li><a [routerLink]="['mietprozess/catalog']">Mietkatalog</a></li>
+      <li><a href="#">Schulungen</a></li>
+      <li><a href="#">Unternehmen</a></li>
+    </ul>
+  </div>
+</div>
+-->
+<div id="id_menu_wrapper">
+  <div class="inner">
+    <div id="id_menu_inner">
+      <div id="id_menu_margin">
+        <a href="javascript:void(0);" id="id_menu_btn_close"
+          ><span>Close</span></a
+        >
+      </div>
+
+      <div id="id_menu_c2a">
+        <div class="module red">
+          <div class="inner title">
+            <h2 class="phone">24-Stunden Notruf: +49 18052020641</h2>
+
+            <div style="clear:both;"><div></div></div>
+          </div>
+
+          <div style="clear:both;"><div></div></div>
+        </div>
+      </div>
+
+      <div id="id_menu_main">
+        <ul id="header1">
+          <li class="has-sub">
+            <a href="javascript:void(0);">Gerät mieten</a>
+            <ul class="sub">
+              <li><a href="#">Gerät mieten</a></li>
+              <li><a href="#">Nutzerverwaltung</a></li>
+              <li><a href="#">Baustellen/Standorte</a></li>
+              <li><a href="#">Rechnungshistorie</a></li>
+              <li><a href="#">Unternehmens-/Kundendaten</a></li>
+            </ul>
+          </li>
+          <li class="has-sub">
+            <a href="javascript:void(0);">Verkauf</a>
+            <ul class="sub">
+              <li><a href="#">Gerät verkaufen</a></li>
+              <li><a href="#">Lorem Ipsum</a></li>
+              <li><a href="#">Dolor amet sit</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Mietkatalog</a></li>
+          <li><a href="#">Schulungen</a></li>
+          <li><a href="#">Unternehmen</a></li>
+        </ul>
+      </div>
+
+      <div id="id_menu_meta">
+        <ul id="footer1a">
+          <li><a href="#" title="AGB">AGB</a></li>
+          <li><a href="#" title="Datenschutz">Datenschutz</a></li>
+          <li><a href="#" title="Impressum">Impressum</a></li>
+        </ul>
+      </div>
+
+      <div id="id_menu_social_media">
+        <ul class="social-media" id="footer2a">
+          <li>
+            <a href="#" title="Xing" class="xing" target="_blank"
+              ><span>Xing</span></a
+            >
+          </li>
+          <li>
+            <a href="#" title="Instagram" class="instagram" target="_blank"
+              ><span>Instagram</span></a
+            >
+          </li>
+          <li>
+            <a href="#" title="LinkedIn" class="linkedin" target="_blank"
+              ><span>LinkedIn</span></a
+            >
+          </li>
+          <li>
+            <a href="#" title="YouTube" class="youtube" target="_blank"
+              ><span>YouTube</span></a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="id_overlay"><div></div></div>
+
+<!-- header -->
+<div id="id_header">
+  <div class="inner">
+    <div id="id_ci">
+      <!--
+   <a [routerLink]="['/']" title="GERKEN"><span>GERKEN</span></a>
+    -->
+      <a href="http://typo3.p597430.mittwaldserver.info/" title="GERKEN"
+        ><span>GERKEN</span></a
+      >
+    </div>
+
+    <div id="id_menu">
+      <ul>
+        <li id="language_whole">
+          <a
+            href="javascript:void(0);"
+            (click)="lang_tmp()"
+            id="id_language_select"
+            title="FALLBACK"
+            >DE</a
+          >
+          <ul id="id_languages">
+            <li>
+              <a
+                href="javascript:void(0);"
+                title="FALLBACK"
+                (click)="langswitch('EN')"
+                >EN</a
+              >
+            </li>
+            <li>
+              <a
+                href="javascript:void(0);"
+                title="FALLBACK"
+                (click)="langswitch('NL')"
+                >NL</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a
+            href="javascript:void(0);"
+            (click)="account_tmp()"
+            id="id_account_btn"
+            ><span>Account</span></a
+          >
+        </li>
+        <li>
+          <a href="javascript:void(0);" id="id_menu_btn"><span>Menu</span></a>
+        </li>
+      </ul>
+    </div>
+
+    <div style="clear:both;"><div></div></div>
+  </div>
+
+  <div style="clear:both;"><div></div></div>
+</div>
+
+<div style="display:none">
+  <img
+    src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/product.jpg"
+    (load)="onload()"
+  />
+</div>

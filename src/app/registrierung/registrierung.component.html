@@ -1,0 +1,658 @@
+<!--Modals-->
+<div class="modal" id="id_modal_info">
+  <h3>Lorem ipsum dolor sit amet</h3>
+
+  <p>
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+    voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+    clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+    amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+    diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+    clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+    amet.
+  </p>
+
+  <div style="clear:both;"><div></div></div>
+</div>
+
+<!-- title -->
+<div class="module red">
+  <div class="inner title">
+    <h1>Registrierung</h1>
+
+    <div style="clear:both;"><div></div></div>
+  </div>
+
+  <div style="clear:both;"><div></div></div>
+</div>
+
+<!-- content -->
+<div id="id_content">
+  <!-- module -->
+  <div class="module">
+    <div class="inner">
+      <form
+        action="{{ link }}"
+        method="Post"
+        enctype="multipart/form-data"
+        id="form"
+        class="registrierung"
+      >
+        <input type="hidden" name="root" id="root" value="" />
+        <div class="inner-extra-intended boxed more-margin">
+          <div class="step-wrapper">
+            <div class="step">1</div>
+          </div>
+
+          <div class="box-head">
+            <h3>Ihre Daten</h3>
+          </div>
+          <label>Anrede*</label>
+          <div class="radio-checkbox-wrapper">
+            <div class="radio-wrapper">
+              <label
+                >Herr
+                <input
+                  type="radio"
+                  name="anrede"
+                  value="Herr"
+                  required="required"
+                  id="anrede1"
+                />
+                <span class="checkmark checkmark-radio"></span>
+              </label>
+            </div>
+            <div class="radio-wrapper">
+              <label
+                >Frau
+                <input
+                  type="radio"
+                  name="anrede"
+                  value="Frau"
+                  required="required"
+                  id="anrede2"
+                />
+                <span class="checkmark checkmark-radio"></span>
+              </label>
+            </div>
+            <div style="clear:both;"><div></div></div>
+          </div>
+          <div id="output.anrede"></div>
+
+          <label>Vorname*</label>
+          <div>
+            <input
+              type="text"
+              name="vorname"
+              placeholder="Max"
+              required="required"
+              id="vorname"
+            />
+          </div>
+
+          <label>Nachname*</label>
+          <div>
+            <input
+              type="text"
+              name="nachname"
+              placeholder="Mustermann"
+              required="required"
+              id="nachname"
+            />
+          </div>
+
+          <label>E-Mail*</label>
+          <div>
+            <input
+              type="email"
+              name="email"
+              placeholder="max@mustermann.de"
+              required="required"
+              id="email"
+            />
+          </div>
+
+          <label>Str./Nr.*</label>
+          <div>
+            <input
+              type="email"
+              name="strasse"
+              placeholder="Musterstr. 11"
+              required="required"
+              id="strasse"
+            />
+          </div>
+
+          <label>Zusätzliche Information zur Adresse</label>
+          <input type="email" name="zusatz" placeholder="" id="zusatz" />
+
+          <div class="form-left">
+            <label>PLZ*</label>
+            <div>
+              <input
+                type="email"
+                name="plz"
+                placeholder="11111"
+                required="required"
+                maxlength="5"
+                id="plz"
+                (input)="reconf('plz', 'ort', 'land')"
+              />
+            </div>
+          </div>
+
+          <div class="form-right">
+            <label>Ort*</label>
+            <div>
+              <input
+                type="email"
+                name="ort"
+                placeholder="Musterstadt"
+                required="required"
+                id="ort"
+              />
+            </div>
+          </div>
+
+          <label>Land</label>
+          <select name="land" id="land">
+            <option>Deutschland</option>
+            <option>Belgien</option>
+            <option>Niederlande</option>
+            <option>Option</option>
+            <option>Option</option>
+            <option>Option</option>
+            <option>Option</option>
+            <option>Option</option>
+          </select>
+        </div>
+
+        <div class="inner-extra-intended boxed more-margin">
+          <div class="step-wrapper">
+            <div class="step">2</div>
+          </div>
+
+          <div class="box-head">
+            <h3>Passwort wählen</h3>
+          </div>
+
+          <label>Passwort*</label>
+          <div>
+            <input
+              type="password"
+              name="password"
+              placeholder="***"
+              required="required"
+              id="password1"
+            />
+          </div>
+          <label>Passwort wiederholen*</label>
+          <div>
+            <input
+              type="password"
+              name="password2"
+              placeholder="***"
+              required="required"
+              id="password2"
+            />
+          </div>
+        </div>
+
+        <div class="inner-extra-intended boxed more-margin">
+          <div class="step-wrapper">
+            <div class="step">3</div>
+          </div>
+
+          <div class="box-head">
+            <h3>Geschäfts- oder Privtkunde?</h3>
+          </div>
+
+          <div class="radio-checkbox-wrapper">
+            <div class="radio-wrapper">
+              <label
+                >Geschäftskunde
+                <input
+                  type="radio"
+                  name="art"
+                  value="Geschäftskunde"
+                  checked="checked"
+                  id="art1"
+                  (click)="toggle('business')"
+                />
+                <span class="checkmark checkmark-radio"></span>
+              </label>
+            </div>
+            <div class="radio-wrapper">
+              <label
+                >Privatkunde
+                <input
+                  type="radio"
+                  name="art"
+                  value="Privatkunde"
+                  id="art2"
+                  (click)="toggle('privat')"
+                />
+                <span class="checkmark checkmark-radio"></span>
+              </label>
+            </div>
+            <div style="clear:both;"><div></div></div>
+          </div>
+
+          <div id="id_registration_private" style="display: none;">
+            <div>
+              <!--
+              <select
+                required="required"
+                class="privat"
+                id="alter1"
+                name="category[privat][alter]"
+              >
+                <option>Alter*</option>
+                <option>18</option>
+                <option>19</option>
+                <option>20</option>
+                <option>21</option>
+                <option>22</option>
+              </select> 
+            -->
+              <label>Geburtsdatum</label>
+              <input
+                type="date"
+                required="required"
+                class="privat"
+                id="alter1"
+                name="category[privat][alter]"
+              />
+            </div>
+            <label>Führerschein</label>
+            <div>
+              <select
+                required="required"
+                class="privat"
+                name="category[privat][fuehrerschein]"
+                id="fuehrerschein"
+              >
+                <option>Führerscheinklasse*</option>
+                <option>B/ B17</option>
+                <option>B96</option>
+                <option>B196</option>
+                <option>BE</option>
+                <option>A1</option>
+                <option>A2</option>
+                <option>A</option>
+                <option>AM</option>
+                <option>C1</option>
+                <option>C1E</option>
+                <option>C</option>
+                <option>CE</option>
+                <option>D1</option>
+                <option>D1E</option>
+                <option>D</option>
+                <option>DE</option>
+                <option>L</option>
+                <option>T</option>
+              </select>
+            </div>
+            <label>Telefonnummer*</label>
+            <div>
+              <input
+                type="tel"
+                name="category[privat][tel]"
+                placeholder="0123456789"
+                required="required"
+                class="privat"
+                id="tel1"
+              />
+            </div>
+          </div>
+
+          <div id="id_registration_business">
+            <label>Name des Unternehmens</label>
+            <input
+              type="email"
+              name="category[business][company]"
+              placeholder="Gerken GmbH"
+              id="company"
+            />
+
+            <label>Telefonnummer*</label>
+            <div>
+              <input
+                type="tel"
+                name="category[business][tel]"
+                placeholder="0123456789"
+                required="required"
+                class="business"
+                id="tel2"
+              />
+            </div>
+            <label>Fax</label>
+            <input
+              type="tel"
+              name="category[business][fax]"
+              class="business"
+              placeholder="0123456789"
+              id="fax"
+            />
+
+            <label>Website</label>
+            <input
+              type="text"
+              name="category[business][website]"
+              class="business"
+              placeholder="www.gerken.de"
+              id="website"
+            />
+
+            <label>Position</label>
+            <div>
+              <!--
+              <input
+                type="text"
+                name="category[business][position]"
+                placeholder="Hilfsarbeiter"
+                required="required"
+                class="business"
+                id="position"
+              />
+            -->
+              <select
+                type="text"
+                name="category[business][position]"
+                placeholder="Hilfsarbeiter"
+                required="required"
+                class="business"
+                id="position"
+              >
+                <option>Position</option>
+                <option>Chef</option>
+                <option>Praktikant</option>
+                <option>Werkstudent</option>
+                <option>Azubi</option>
+                <option>Hilfsarbeiter</option>
+              </select>
+            </div>
+            <label>Kundennummer</label>
+            <div class="input-info">
+              <a
+                data-fancybox
+                data-src="#id_modal_info"
+                data-options='{"touch" : false}'
+                href="javascript:void(0);"
+                class="info"
+                ><span>Info</span></a
+              >
+              <input
+                type="text"
+                class="business"
+                name="category[business][kundennummer]"
+                placeholder="1234567890"
+                id="kundennummer"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="inner-extra-intended boxed more-margin"
+          id="zusatzinfos1"
+          style="display:none"
+        >
+          <div class="step-wrapper">
+            <div class="step">4</div>
+          </div>
+
+          <div class="box-head">
+            <h3>Zusätzliche Informationen</h3>
+          </div>
+          <div>
+            <!--
+              <select
+                name="category[business][alter]"
+                id="alter2"
+                class="business"
+              >
+                <option>Alter*</option>
+                <option>18</option>
+                <option>19</option>
+                <option>20</option>
+                <option>21</option>
+                <option>22</option>
+              </select>
+            -->
+            <label>Geburtsdatum</label>
+            <input
+              type="date"
+              required="required"
+              class="business"
+              id="alter2"
+              name="category[business][alter]"
+            />
+          </div>
+          <label>Unternehmensgröße</label>
+          <select
+            name="category[business][companysize]"
+            id="companysize"
+            class="business"
+          >
+            <option>Unternehmensgröße</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+
+          <label>Branche</label>
+          <select
+            name="category[business][branche]"
+            id="branche"
+            class="business"
+          >
+            <option>Branche</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+
+          <label>Mieten pro Jahr</label>
+          <select
+            name="category[business][anzahl]"
+            id="anzahl"
+            class="business"
+          >
+            <option>Anzahl Mieten pro Jahr</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+
+          <label>Durchschnittliche Mietdauer</label>
+          <select
+            name="category[business][durchschnitt]"
+            id="durchschnitt"
+            class="business"
+          >
+            <option>Durchschnittliche Mietdauer</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+
+        <div class="inner-extra-intended boxed more-margin">
+          <div class="step-wrapper">
+            <div class="step" id="zusatzinfos1a">4</div>
+          </div>
+
+          <div class="box-head">
+            <h3>Datei hochladen</h3>
+          </div>
+          <div class="centered space">
+            <label class="custom-file-upload">
+              <input
+                type="file"
+                name="datei"
+                id="file"
+                (change)="show()"
+                accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,.pdf"
+              />
+              <div class="up" id="screeny">PDF Upload</div>
+            </label>
+          </div>
+        </div>
+        <div class="inner-extra-intended boxed more-margin">
+          <div class="step-wrapper">
+            <div class="step" id="zusatzinfos2a">5</div>
+          </div>
+
+          <div class="box-head">
+            <h3>Registrierung abschließen</h3>
+          </div>
+          <div class="radio-checkbox-wrapper">
+            <label
+              >Ich möchte zukünftig auf Rechnung bestellen. Ich bin damit
+              einverstanden, dass meine Bonität durch Gerken geprüft wird.
+              <input type="checkbox" name="bonitaet" id="bonitaet" value="OK" />
+              <span class="checkmark checkmark-checkbox"></span>
+            </label>
+            <div style="clear:both;"><div></div></div>
+          </div>
+
+          <div class="radio-checkbox-wrapper">
+            <label
+              >AGB zustimmen*
+              <input type="checkbox" name="agb" id="agb" value="OK" />
+              <span class="checkmark checkmark-checkbox"></span>
+            </label>
+            <div style="clear:both;"><div></div></div>
+          </div>
+
+          <div class="radio-checkbox-wrapper">
+            <label
+              >Datenschutz zustimmen*
+              <input
+                type="checkbox"
+                name="datenschutz"
+                id="datenschutz"
+                value="OK"
+              />
+              <span class="checkmark checkmark-checkbox"></span>
+            </label>
+            <div style="clear:both;"><div></div></div>
+          </div>
+
+          <div class="radio-checkbox-wrapper">
+            <label
+              >Ja, ich möchte den Newsletter mit Fachnews, sowie Informationen
+              zu Angeboten und Rabatten erhalten.
+              <input
+                type="checkbox"
+                name="marketing"
+                id="marketing"
+                value="OK"
+              />
+              <span class="checkmark checkmark-checkbox"></span>
+            </label>
+            <div style="clear:both;"><div></div></div>
+          </div>
+
+          <label
+            >Hinweise zum Widerruf und der Verarbeitung der Daten geben wir in
+            unserer <a href="#">Datenschutzerklärung</a>.</label
+          >
+
+          <div class="centered space">
+            <input
+              type="submit"
+              id="submit"
+              name="submit"
+              value="Jetzt registrieren"
+            />
+          </div>
+          <div style="clear:both;"><div></div></div>
+        </div>
+      </form>
+    </div>
+    <div style="clear:both;"><div></div></div>
+  </div>
+  <div class="inner-extra-intended" *ngIf="result == 'success'">
+    <h3>Sie wurden erfolgreich registriert.</h3>
+  </div>
+  <div class="inner-extra-intended" *ngIf="result == 'fehler1'">
+    <h3>Leider konnten die Nutzerdaten nicht gespeichert werden.</h3>
+  </div>
+  <div class="inner-extra-intended" *ngIf="result == 'fehler2'">
+    <h3>Dieser Nutzer existiert bereits.</h3>
+  </div>
+  <!-- module end -->
+
+  <!-- image -->
+  <div class="module full">
+    <img
+      src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/image.jpg"
+      alt="image"
+      width=""
+      height=""
+      (load)="onload()"
+    />
+  </div>
+  <!-- image end -->
+
+  <!-- image -->
+  <div class="module black">
+    <div class="inner inner-intended">
+      <div class="left">
+        <div class="inner-small">
+          <h3>Newsletter</h3>
+
+          <p>
+            Melden Sie sich jetzt unverbindlich für unseren Newsletter an, um
+            keine Highlights mehr zu verpassen. Wir halten Sie mit
+            Produktneuheiten, Gerken Highlights, Rabattaktionen und vielen
+            Weiteren Informationen auf dem Laufenden!
+          </p>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="inner-small">
+          <form>
+            <input type="email" name="email" placeholder="E-Mail" />
+
+            <div class="radio-checkbox-wrapper">
+              <label
+                >Durch Absenden dieses Formulars erklärst Du dich mit der
+                Speicherung und Verarbeitung Deiner Daten einverstanden.
+                <a href="#">Weitere Informationen zum Datenschutz</a>.
+                <input
+                  type="checkbox"
+                  name="DSGVO"
+                  value="OK"
+                  required="required"
+                />
+                <span class="checkmark checkmark-checkbox"></span>
+              </label>
+              <div style="clear:both;"><div></div></div>
+            </div>
+
+            <input type="submit" name="submit" value="Abonnieren" />
+          </form>
+        </div>
+      </div>
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+  </div>
+  <!-- image end -->
+
+  <div style="clear:both;"><div></div></div>
+</div>

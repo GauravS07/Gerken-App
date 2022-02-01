@@ -1,0 +1,488 @@
+<ng-template [ngIf]="user">
+  <!-- Modals-->
+  <div class="modal" id="id_modal_adress" style="display: none;">
+    <h3 id="new_title">Rechnungsadresse anlegen</h3>
+
+    <form onsubmit="event.preventDefault();">
+      <label>Name/Firma</label>
+      <input
+        type="text"
+        name="xxx"
+        placeholder="Max Mustermann"
+        required="required"
+        id="new_name"
+      />
+
+      <label>Str./Nr.*</label>
+      <input
+        type="email"
+        name="xxx"
+        placeholder="Musterstr. 11"
+        required="required"
+        id="new_strasse"
+      />
+
+      <div class="form-left">
+        <label>PLZ*</label>
+        <input
+          type="email"
+          name="xxx"
+          placeholder="11111"
+          required="required"
+          maxlength="5"
+          id="new_plz"
+          (input)="reconf('new_plz', 'new_ort', 'new_land')"
+        />
+      </div>
+
+      <div class="form-right">
+        <label>Ort*</label>
+        <input
+          type="email"
+          name="xxx"
+          placeholder="Musterstadt"
+          required="required"
+          id="new_ort"
+        />
+      </div>
+
+      <label>Land</label>
+      <select id="new_land">
+        <option>Deutschland</option>
+        <option>Belgien</option>
+        <option>Niederlande</option>
+      </select>
+
+      <label>Zusätzliche Information zur Adresse</label>
+      <textarea id="new_zusatz"></textarea>
+
+      <input type="hidden" id="new_id" value="" />
+      <input type="hidden" id="new_aktive" value="" />
+      <div class="centered space">
+        <input
+          type="submit"
+          name="submit"
+          value="Speichern"
+          (click)="saveRechnungsadresse()"
+        />
+      </div>
+    </form>
+
+    <div style="clear:both;"><div></div></div>
+  </div>
+
+  <div class="modal" id="id_modal_delete" style="display: none;">
+    <h3>
+      Sind Sie sich sicher, dass sie diese Rechnungsadresse löschen möchten?
+    </h3>
+
+    <form onsubmit="event.preventDefault();">
+      <div class="centered space">
+        <input
+          type="submit"
+          name="submit"
+          value="Ja"
+          id="approve"
+          data-src=""
+          (click)="deleteRechnungsadresse()"
+        />
+
+        <input
+          type="submit"
+          name="submit"
+          value="Nein"
+          (click)="closeRechnungsadresse()"
+        />
+      </div>
+    </form>
+
+    <div style="clear:both;"><div></div></div>
+  </div>
+
+  <!-- Modals End-->
+  <ng-template [ngIf]="user.art">
+    <div class="account">
+      <!-- title -->
+      <div class="module red">
+        <div class="inner title">
+          <div *ngIf="user.art == 'Privatkunde'; else elseBlock">
+            <h1>Kundendaten</h1>
+          </div>
+          <ng-template #elseBlock><h1>Unternehmensdaten</h1></ng-template>
+          <div style="clear:both;"><div></div></div>
+        </div>
+
+        <div style="clear:both;"><div></div></div>
+      </div>
+
+      <!-- content -->
+      <div id="id_content">
+        <div class="module white">
+          <!--
+      <h4>Ansprechpartner</h4>
+      <div class="inner bg" *ngFor="let item of user; let i = index">
+        <p>{{{{ item }}}}</p>
+      </div>
+      -->
+          <div class="inner bg">
+            <div class="inner-extra-intended">
+              <p id="msgtothemax"></p>
+              <form onsubmit="event.preventDefault();">
+                <label>Anrede*</label>
+                <div class="radio-checkbox-wrapper" id="anrede">
+                  <div class="radio-wrapper">
+                    <label
+                      >Herr
+                      <input
+                        type="radio"
+                        name="radio"
+                        value="Herr"
+                        required="required"
+                        id="anrede1"
+                      />
+                      <span class="checkmark checkmark-radio"></span>
+                    </label>
+                  </div>
+                  <div class="radio-wrapper">
+                    <label
+                      >Frau
+                      <input
+                        type="radio"
+                        name="radio"
+                        value="Frau"
+                        id="anrede2"
+                      />
+                      <span class="checkmark checkmark-radio"></span>
+                    </label>
+                  </div>
+                  <div style="clear:both;"><div></div></div>
+                </div>
+
+                <label>Vorname</label>
+                <input
+                  type="text"
+                  name="xxx"
+                  placeholder="Max"
+                  required="required"
+                  value="{{ user.vorname }}"
+                  id="vorname"
+                />
+
+                <label>Nachname</label>
+                <input
+                  type="text"
+                  name="xxx"
+                  placeholder="Musterpizza"
+                  required="required"
+                  value="{{ user.nachname }}"
+                  id="nachname"
+                />
+
+                <label>E-Mail*</label>
+                <input
+                  type="email"
+                  name="xxx"
+                  placeholder="max@mustermann.de"
+                  required="required"
+                  value="{{ user.email }}"
+                  id="email"
+                />
+
+                <label>Str./Nr.*</label>
+                <input
+                  type="email"
+                  name="xxx"
+                  placeholder="Musterstr. 11"
+                  required="required"
+                  value="{{ user.strasse }}"
+                  id="strasse"
+                />
+
+                <label>Zusätzliche Information zur Adresse</label>
+                <input
+                  type="email"
+                  name="xxx"
+                  placeholder=""
+                  value="{{ user.zusatz }}"
+                  id="zusatz"
+                />
+
+                <div class="form-left">
+                  <label>PLZ*</label>
+                  <input
+                    type="email"
+                    name="xxx"
+                    placeholder="11111"
+                    required="required"
+                    value="{{ user.plz }}"
+                    maxlength="5"
+                    id="plz"
+                    (input)="reconf('plz', 'ort', 'land')"
+                  />
+                </div>
+
+                <div class="form-right">
+                  <label>Ort*</label>
+                  <input
+                    type="email"
+                    name="xxx"
+                    placeholder="Musterstadt"
+                    required="required"
+                    value="{{ user.ort }}"
+                    id="ort"
+                  />
+                </div>
+
+                <label>Land</label>
+                <select id="land">
+                  <option>Deutschland</option>
+                  <option>Belgien</option>
+                  <option>Niederlande</option>
+                </select>
+
+                <label>Passwort ändern</label>
+                <input
+                  type="password"
+                  name="xxx"
+                  placeholder="Neues Passwort"
+                  required="required"
+                  id="password1"
+                />
+
+                <input
+                  type="password"
+                  name="xxx"
+                  placeholder="Passwort wiederholen"
+                  required="required"
+                  id="password2"
+                />
+                <div *ngIf="user.art == 'Privatkunde'; else elseBlock2">
+                  <div id="id_registration_private">
+                    <label>Geburtsdatum</label>
+                    <input
+                      type="date"
+                      required="required"
+                      class="privat"
+                      id="alter"
+                    />
+
+                    <label>Führerschein</label>
+                    <select
+                      required="required"
+                      class="privat"
+                      name="category[privat][fuehrerschein]"
+                      id="fuehrerschein"
+                      value="{{ user.privat.fuehrerschein }}"
+                    >
+                      <option>Führerscheinklasse*</option>
+                      <option>B/ B17</option>
+                      <option>B96</option>
+                      <option>B196</option>
+                      <option>BE</option>
+                      <option>A1</option>
+                      <option>A2</option>
+                      <option>A</option>
+                      <option>AM</option>
+                      <option>C1</option>
+                      <option>C1E</option>
+                      <option>C</option>
+                      <option>CE</option>
+                      <option>D1</option>
+                      <option>D1E</option>
+                      <option>D</option>
+                      <option>DE</option>
+                      <option>L</option>
+                      <option>T</option>
+                    </select>
+
+                    <label>Telefonnummer*</label>
+                    <input
+                      type="tel"
+                      name="xxx"
+                      placeholder="0123456789"
+                      required="required"
+                      value="{{ user.privat.tel }}"
+                      id="tel"
+                    />
+                  </div>
+                </div>
+                <ng-template #elseBlock2>
+                  <div id="id_registration_business">
+                    <label>Name des Unternehmens</label>
+                    <input
+                      type="email"
+                      name="xxx"
+                      placeholder="Gerken GmbH"
+                      value="{{ user.business.company }}"
+                      id="company"
+                    />
+
+                    <label>Telefonnummer*</label>
+                    <input
+                      type="tel"
+                      name="xxx"
+                      placeholder="0123456789"
+                      required="required"
+                      value="{{ user.business.tel }}"
+                      id="tel"
+                    />
+
+                    <label>Fax</label>
+                    <input
+                      type="tel"
+                      name="xxx"
+                      placeholder="0123456789"
+                      value="{{ user.business.fax }}"
+                      id="fax"
+                    />
+
+                    <label>Website</label>
+                    <input
+                      type="text"
+                      name="xxx"
+                      placeholder="www.gerken.de"
+                      value="{{ user.business.website }}"
+                      id="website"
+                    />
+
+                    <label>Position*</label>
+                    <!--
+                    <input
+                      type="text"
+                      name="xxx"
+                      placeholder="Hilfsarbeiter"
+                      required="required"
+                      value="{{ user.business.position }}"
+                      id="position"
+                    />
+                  -->
+                    <select
+                      type="text"
+                      name="xxx"
+                      placeholder="Hilfsarbeiter"
+                      required="required"
+                      value="{{ user.business.position }}"
+                      id="position"
+                    >
+                      <option>Position</option>
+                      <option>Chef</option>
+                      <option>Praktikant</option>
+                      <option>Werkstudent</option>
+                      <option>Azubi</option>
+                      <option>Hilfsarbeiter</option>
+                    </select>
+
+                    <label>Kundennummer</label>
+                    <div class="input-info">
+                      <input
+                        type="text"
+                        name="xxx"
+                        placeholder="1234567890"
+                        value="{{ user.business.kundennummer }}"
+                        id="kundennummer"
+                      />
+                    </div>
+                  </div>
+                </ng-template>
+                <div *ngIf="user.business">
+                  <div *ngIf="user.business.briefbogen">
+                    <a
+                      href="https://diesdas.codersunlimited.de/diesdas/api/testing/Userdata/Files/{{
+                        user.business.briefbogen
+                      }}"
+                      target="_blank"
+                      title="Briefbogen"
+                      style="text-align:center"
+                      ><img
+                        src="https://diesdas.codersunlimited.de/diesdas/assets/images/icons/pdf.svg"
+                        width="100px"
+                        title="Briefbogen"
+                        style="text-align:center;margin-left:40%;margin-right:40%"
+                      />
+                      <p style="text-align:center">Briefbogen</p></a
+                    >
+                  </div>
+
+                  <!--Wenn eine Datei hochgeladen wurde steht hier ein Link-->
+                  <!--
+                  <div class="centered space" id="briefbogen">
+                    <label class="custom-file-upload">
+                      <input type="file" />
+                      <div class="up">PDF Upload</div>
+                    </label>
+                  </div>
+                --></div>
+                <div class="centered space">
+                  <input
+                    name="submit"
+                    type="submit"
+                    id="send"
+                    (click)="sending()"
+                    value="Speichern"
+                  />
+                </div>
+              </form>
+              <div style="clear:both;"><div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <!--Rechnungsadressen-->
+  <div class="inner inner-intended">
+    <h2 class="centered">Rechnungsadressen verwalten</h2>
+    <div style="display:none">
+      <img
+        src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/product.jpg"
+        (load)="loadRechnungsadressen()"
+      />
+    </div>
+    <div id="rechnungsadressen">
+      <div class="adress-box">
+        <p>
+          Test Empfänger<br />
+          Teststr. 11<br />
+          11111 Testdort<br />
+        </p>
+
+        <a href="#" class="edit"><span>Edit</span></a>
+
+        <a href="#" class="delete"><span>Delete</span></a>
+
+        <div style="clear:both;"><div></div></div>
+      </div>
+    </div>
+
+    <div style="clear:both;"><div></div></div>
+
+    <div class="centered">
+      <a (click)="newRechnungsadresse()" class="btn btn-outline"
+        >Neue Adresse anlegen</a
+      >
+    </div>
+
+    <div style="clear:both;"><div></div></div>
+  </div>
+</ng-template>
+<ng-template [ngIf]="!user">
+  <div class="account">
+    <!-- title -->
+    <div class="module red">
+      <div class="inner title">
+        <h1>Accountdaten</h1>
+
+        <div style="clear:both;"><div></div></div>
+      </div>
+
+      <div style="clear:both;"><div></div></div>
+    </div>
+    <p>Sie sind leider aktuell nicht eingeloggt</p>
+  </div>
+</ng-template>
+<div style="display:none">
+  <img
+    src="https://diesdas.codersunlimited.de/diesdas/assets/images/_temp/product.jpg"
+    (load)="setupUser()"
+  />
+</div>

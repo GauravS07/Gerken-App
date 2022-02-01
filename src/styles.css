@@ -1,0 +1,3238 @@
+/* roboto-regular - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://diesdas.codersunlimited.de/diesdas/templates2/fonts/roboto-v29-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+    url('https://diesdas.codersunlimited.de/diesdas/templates2/fonts/roboto-v29-latin-regular.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */
+      url('https://diesdas.codersunlimited.de/diesdas/templates2/fonts/roboto-v29-latin-regular.woff2')
+      format('woff2'),
+    /* Super Modern Browsers */
+      url('https://diesdas.codersunlimited.de/diesdas/templates2/fonts/roboto-v29-latin-regular.woff')
+      format('woff'),
+    /* Modern Browsers */
+      url('https://diesdas.codersunlimited.de/diesdas/templates2/fonts/roboto-v29-latin-regular.ttf')
+      format('truetype'),
+    /* Safari, Android, iOS */
+      url('https://diesdas.codersunlimited.de/diesdas/templates2/fonts/roboto-v29-latin-regular.svg#Roboto')
+      format('svg'); /* Legacy iOS */
+}
+/* roboto-700 - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('https://diesdas.codersunlimited.de/diesdas/templates2/fonts/roboto-v29-latin-700.eot'); /* IE9 Compat Modes */
+  src: local(''),
+    url('https://diesdas.codersunlimited.de/diesdas/templates2/fonts/roboto-v29-latin-700.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */
+      url('https://diesdas.codersunlimited.de/diesdas/templates2/fonts/roboto-v29-latin-700.woff2')
+      format('woff2'),
+    /* Super Modern Browsers */
+      url('https://diesdas.codersunlimited.de/diesdas/templates2/fonts/roboto-v29-latin-700.woff')
+      format('woff'),
+    /* Modern Browsers */
+      url('https://diesdas.codersunlimited.de/diesdas/templates2/fonts/roboto-v29-latin-700.ttf')
+      format('truetype'),
+    /* Safari, Android, iOS */
+      url('https://diesdas.codersunlimited.de/diesdas/templates2/fonts/roboto-v29-latin-700.svg#Roboto')
+      format('svg'); /* Legacy iOS */
+}
+
+/* html, body */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100.1%;
+}
+
+body.open #id_page {
+  position: fixed;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* default */
+* {
+  padding: 0px;
+  margin: 0px;
+  text-align: left;
+  font-family: 'Roboto', sans-serif, Tahoma, Arial, Verdana;
+  font-size: 100%;
+  font-weight: 400;
+  color: #141416;
+  background-repeat: no-repeat !important;
+  outline: none;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a,
+button {
+  text-decoration: none;
+  transition: all 500ms;
+}
+
+a:hover,
+a.active {
+  color: #de111e;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 0px;
+}
+
+.red-text {
+  color: #de111e;
+}
+
+b,
+strong,
+.bold {
+  font-weight: 700 !important;
+}
+
+hr {
+  height: 1px;
+  background: #ccc;
+  border: none;
+  margin: 0 0 20px 0;
+}
+
+u {
+  text-decoration: line-through;
+}
+
+ul {
+  list-style: none;
+}
+
+sub,
+sup {
+  line-height: 0.6rem;
+  line-height: 0 !important;
+}
+
+h1,
+h2 {
+  font-size: 1.1rem;
+  line-height: 1em;
+  margin: 0 0 40px 0;
+}
+
+.module.header .header-content h1 {
+  font-size: 2.2rem;
+  line-height: 1.2em;
+  color: #de111e;
+  margin-bottom: 20px;
+}
+
+h3 {
+  display: inline-block;
+  font-size: 1.6rem;
+  line-height: 1em;
+  margin-bottom: 20px;
+}
+
+h4 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+h5 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2em;
+  margin-bottom: 5px;
+}
+
+p,
+td {
+  font-size: 1rem;
+  line-height: 1.5em;
+  margin-bottom: 20px;
+}
+
+.news {
+  margin-bottom: 40px;
+}
+
+.news-image {
+  width: 40%;
+  float: left;
+}
+
+.news-content {
+  width: 60%;
+  float: right;
+  padding: 30px 10%;
+  box-sizing: border-box;
+}
+
+.news:nth-child(odd) .news-image {
+  float: right;
+}
+
+.news:nth-child(odd) .news-content {
+  float: left;
+}
+
+.date {
+  display: block;
+  font-size: 0.85rem;
+  color: #616161;
+  margin-bottom: 15px;
+}
+
+.load-more {
+  display: inline-block;
+  font-size: 1.2rem;
+  text-align: center;
+  width: 100%;
+  padding: 30px 0;
+  background: #de111e;
+}
+
+.load-more:hover {
+  background: #000;
+}
+
+.load-more span {
+  display: inline-block;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #fff;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 30px;
+  padding: 5px 0 5px 45px;
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/icons/plus-invert.svg');
+}
+
+.phone {
+  padding: 0 0 0 30px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/icons/phone.svg');
+}
+
+.small {
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+.module img {
+  margin-bottom: 20px;
+}
+
+.module.full img,
+.product img {
+  margin-bottom: 0;
+}
+
+a span {
+  display: none;
+}
+
+p a {
+  text-decoration: underline;
+}
+
+i {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.centered,
+.centered * {
+  text-align: center;
+}
+
+#id_chat_btn {
+  position: fixed;
+  top: 30%;
+  right: 0;
+  z-index: 999;
+  width: 30px;
+  height: 100px;
+  background-color: #757575;
+  -webkit-border-radius: 6px 0 0 6px;
+  -moz-border-radius: 6px 0 0 6px;
+  border-radius: 6px 0 0 6px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 20px auto;
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/icons/chat.svg');
+}
+
+#id_chat_btn:hover {
+  background-color: #141416;
+}
+
+.btn,
+form input[type='submit'] {
+  display: inline-block;
+  line-height: 1em;
+  margin-bottom: 20px;
+  padding: 12px 40px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  background: #de111e;
+  color: #fff !important;
+  text-align: center;
+  -webkit-appearance: none;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  text-align: center !important;
+  box-sizing: border-box;
+  transition: all 500ms;
+}
+
+.btn:hover,
+form input[type='submit']:hover {
+  background: #141416;
+}
+
+.red .btn {
+  background: #fff;
+  border: 1px solid #fff;
+  color: #141416 !important;
+}
+
+.black .btn,
+.black form input[type='submit'] {
+  background: #de111e;
+  border: 1px solid #de111e;
+  color: #fff !important;
+}
+
+.red .btn:hover,
+.red form input[type='submit']:hover {
+  background: none;
+  color: #fff !important;
+  border: 1px solid #fff;
+}
+
+.black .btn:hover,
+.black form input[type='submit']:hover {
+  background: none;
+  color: #fff !important;
+  border: 1px solid #de111e;
+}
+
+.btn.btn-outline {
+  background: none;
+  border: 1px solid #141416;
+  color: #141416 !important;
+}
+
+.btn.btn-grey {
+  background: #6a7a81;
+  color: #fff !important;
+}
+
+.btn.btn-outline:hover,
+.btn.btn-grey:hover {
+  background: #141416;
+  color: #fff !important;
+}
+
+.red .btn.btn-outline {
+  background: none;
+  border: 1px solid #fff;
+  color: #fff !important;
+}
+
+.red .btn.btn-outline:hover {
+  background: #fff;
+  color: #141416 !important;
+}
+
+.selection-wrapper {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+.selection-wrapper .btn {
+  width: 100%;
+  background: none;
+  border: 1px solid #141416;
+  color: #141416 !important;
+  font-weight: 400;
+}
+
+.selection-wrapper .btn:hover {
+  color: #fff !important;
+  background: #141416;
+}
+
+.help,
+.more {
+  line-height: 1em;
+  padding: 5px 36px 5px 0;
+  display: inline-block;
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 26px 26px;
+}
+
+.help {
+  font-size: 1.1rem;
+  color: #fff !important;
+  font-weight: 700;
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/icons/ask.svg');
+}
+
+.more-wrapper {
+  text-align: right;
+}
+
+.more {
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/icons/arrow-down.svg');
+}
+
+.red .more {
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/icons/arrow-down-white.svg');
+}
+
+.modal {
+  display: none;
+  width: 80%;
+  max-width: 800px;
+  box-sizing: border-box;
+  padding: 40px;
+}
+
+.button-wrapper {
+  max-width: 100% !important;
+  padding-top: 0 !important;
+}
+
+.button-wrapper .btn:first-child {
+  float: left;
+}
+
+.button-wrapper .btn:nth-child(2) {
+  float: right;
+}
+
+.button-wrapper.centered .btn {
+  float: none !important;
+}
+
+.right-1-3 .btn {
+  width: 100%;
+}
+
+/* ------------------------------------------------------------------------------------------------------------ */
+
+#id_page {
+  width: 100%;
+  margin: auto;
+}
+
+#id_header {
+  width: 100%;
+}
+
+#id_header .inner {
+  padding: 30px 0;
+}
+
+#id_header #id_ci {
+  width: 50%;
+  float: left;
+}
+
+#id_header #id_ci a {
+  display: inline-block;
+  width: 259px;
+  height: 58px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/ci/gerken.svg');
+}
+
+#id_header #id_menu {
+  width: 50%;
+  /*float: right;*/
+  position: absolute;
+  right: 30px;
+  top: 40px;
+  text-align: right;
+  z-index: 84;
+}
+
+#id_header #id_menu ul {
+  float: right;
+}
+
+#id_header #id_menu ul li {
+  position: relative;
+  float: left;
+  margin: 0 0 0 22px;
+}
+
+#id_header #id_menu ul li a#id_language_select {
+  font-size: 1.3rem;
+  color: #ccc;
+  background-position: right bottom;
+  padding-right: 10px;
+  background-size: 8px 8px;
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/header/down.svg');
+}
+
+#id_header #id_menu ul li #id_languages {
+  display: none;
+  position: absolute;
+  z-index: 999;
+  top: 30px;
+  right: 0;
+  background: #de111e;
+}
+
+#id_header #id_menu ul li #id_languages li {
+  margin: 3px 0;
+  padding: 10px;
+}
+
+#id_header #id_menu ul li #id_languages a {
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+#id_header #id_menu ul li a#id_language_select:hover,
+#id_header #id_menu ul li #id_languages a:hover {
+  color: #ccc;
+}
+
+#id_header #id_menu ul li a#id_account_btn {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-position: center center;
+  background-size: 30px 30px;
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/header/account.svg');
+}
+
+#id_header #id_menu ul li a#id_account_btn.loggedin {
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/header/account-in.svg');
+}
+
+#id_header #id_menu ul li a#id_menu_btn {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-position: center center;
+  background-size: 30px 30px;
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/header/menu.svg');
+  background-size: 20px 20px;
+}
+
+.open #id_header #id_menu ul li a#id_menu_btn {
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/header/close.svg');
+}
+
+#id_menu_btn_close {
+  position: absolute;
+  right: 30px;
+  top: 40px;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-position: center center;
+  background-size: 30px 30px;
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/header/close.svg');
+  background-size: 20px 20px;
+}
+
+#id_overlay {
+  display: none;
+  position: fixed;
+  z-index: 80;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+/* ------------------------------------------------------------------------------------------------------------ */
+
+.inner.title,
+#id_menu_c2a .inner {
+  padding: 15px 0 !important;
+}
+
+.inner.title * {
+  text-align: left;
+  margin: 0;
+}
+
+.inner.title #id_title_image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.inner.title #id_title_image img {
+  max-width: 140px;
+}
+
+.top-info-wrapper {
+  text-align: center;
+}
+
+.top-info-wrapper .top-info {
+  background: #141416;
+  padding: 8px 20px;
+  -webkit-border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
+  text-align: center;
+  width: auto;
+  display: inline-block;
+}
+
+.top-info-wrapper .top-info span {
+  color: #fff;
+  font-size: 0.9rem;
+  line-height: 1em;
+}
+
+/* ------------------------------------------------------------------------------------------------------------ */
+
+#id_content {
+  width: 100%;
+  background: #dfe3e8;
+  transition: all 500ms;
+}
+
+.blank #id_content {
+  background: #fff;
+}
+
+.module {
+  position: relative;
+}
+
+.module.header {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.module.module-margin {
+  padding: 125px 0;
+}
+
+.module-detail {
+  margin-top: -100px;
+  margin-bottom: 60px;
+}
+
+.module-detail .right {
+  padding-top: 120px;
+}
+
+.inner {
+  position: relative;
+  max-width: 1180px;
+  padding: 60px 0 40px 0;
+  margin: auto;
+}
+
+.boxed {
+  background: #fff;
+  padding: 30px 60px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+  margin-bottom: 30px !important;
+}
+
+.boxed.more-margin {
+  margin-bottom: 60px !important;
+}
+
+.right-1-3 .boxed {
+  padding: 40px 20px;
+}
+
+.inner-intended {
+  max-width: 960px;
+  margin: auto;
+}
+
+.inner-extra-intended {
+  max-width: 720px;
+  margin: auto;
+}
+
+.inner-small-intended {
+  max-width: 540px;
+  margin: auto;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.full {
+  width: 100%;
+}
+
+.full,
+.full .inner,
+.title {
+  padding: 0;
+}
+
+.full img {
+  width: 100%;
+  height: auto;
+}
+
+.black {
+  background: #141416;
+}
+
+.module.header .header-content {
+  padding: 100px 10% 100px 40%;
+  width: 50%;
+}
+
+.header-actions,
+.icon-wrapper {
+  width: 101%;
+  margin: 0 -1%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.lined {
+  border-bottom: 1px solid #ccc;
+}
+
+.icon-wrapper div {
+  font-size: 0.8rem;
+  line-height: 1.2em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #333;
+  width: 18%;
+  margin: 0 1%;
+  padding: 40px 0;
+  padding-left: 50px;
+  box-sizing: border-box;
+  background-position: left center;
+  background-size: 30px;
+  background-repeat: no-repeat;
+}
+
+.header-actions .btn {
+  width: 31.33%;
+  margin: 0 1%;
+  padding: 10px;
+  background-color: #fff;
+  background-position: 20px center;
+  background-size: 30px;
+  background-repeat: no-repeat;
+}
+
+.header-actions .btn:hover {
+  background-color: #000;
+}
+
+.header-actions .btn span {
+  width: 100%;
+  font-size: 0.8rem;
+  color: #de111e;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.header-actions .btn span span {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.header-actions .btn span.btn-wrapper {
+  box-sizing: border-box;
+  padding-left: 55px;
+  width: 100%;
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/icons/btn-arrow.svg');
+  background-position: right center;
+  background-size: 16px;
+  background-repeat: no-repeat;
+}
+
+.highlight {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.highlight .right {
+  padding-top: 0;
+  text-align: right;
+}
+
+.highlight .right a {
+  text-decoration: underline;
+}
+
+.highlight.no-margin {
+  margin-bottom: 1px;
+}
+
+.highlight *:last-child {
+  margin: 0;
+}
+
+.highlight .btn {
+  width: 100%;
+}
+
+.lightgrey {
+  background: #f0f0f0;
+}
+
+.grey {
+  background: #b9b9b9;
+}
+
+.darkgrey {
+  background: #757575;
+}
+
+.red {
+  background: #de111e;
+}
+
+.red *,
+.black *,
+.darkgrey * {
+  color: #fff !important;
+}
+
+.left {
+  width: 42%;
+  margin-right: 8%;
+  float: left;
+}
+
+.right {
+  width: 42%;
+  margin-left: 8%;
+  float: right;
+}
+
+.module-detail .left {
+  width: 48%;
+  margin-right: 2%;
+}
+
+.module-detail .right {
+  width: 48%;
+  margin-left: 2%;
+}
+
+.left-2-3 {
+  width: 72%;
+  margin-right: 3%;
+  float: left;
+}
+
+.right-1-3 {
+  width: 25%;
+  float: left;
+  position: sticky;
+  top: 0;
+}
+
+.left-2-3 .left {
+  width: 46%;
+  margin-right: 4%;
+}
+
+.left-2-3 .right {
+  width: 46%;
+  margin-left: 4%;
+}
+
+.left-3-5 {
+  width: 54%;
+  margin-right: 8%;
+  float: left;
+}
+
+.right-2-5 {
+  width: 38%;
+  float: left;
+}
+
+.left-1-3 {
+  width: 40%;
+  margin-right: 5%;
+  float: left;
+}
+
+.right-2-3 {
+  width: 55%;
+  float: left;
+}
+
+.paybox {
+  background: #f0f0f0;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.summary {
+  background: #de111e;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.summary h5 {
+  margin-bottom: 20px;
+}
+
+.summary .btn {
+  width: 100%;
+}
+
+.summary .btn:hover {
+  background: #141416 !important;
+  color: #fff !important;
+}
+
+.summary a:hover {
+  color: #141416 !important;
+}
+
+.inner-extra-intended .left {
+  width: 48%;
+  margin-right: 2%;
+}
+
+.inner-extra-intended .right {
+  width: 48%;
+  margin-left: 2%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+}
+
+table tr td {
+  padding: 0 0 1px 0;
+}
+
+table tr td:nth-child(even) {
+  text-align: right;
+}
+
+.sum td {
+  padding-top: 10px;
+  font-weight: 700;
+}
+
+.faq-wrapper img {
+  margin-bottom: 1px;
+}
+
+.faq-wrapper .content img,
+video {
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.highligh-box {
+  width: 100%;
+  background: #f0f0f0;
+  padding: 30px;
+  position: relative;
+  padding-right: 50%;
+  box-sizing: border-box;
+}
+
+.highligh-box h2 {
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  line-height: 1.2em;
+}
+
+.highligh-box .btn {
+  margin-bottom: 0;
+}
+
+.highligh-box img {
+  width: 30%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  max-width: 360px;
+  margin: 0;
+}
+
+/* ------------------------------------------------------------------------------------------------------------ */
+
+#id_menu_wrapper {
+  display: none;
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  position: absolute;
+  z-index: 85;
+}
+
+#id_menu_inner {
+  top: 0;
+  right: 0;
+  padding: 0;
+  width: 35%;
+  min-height: 100vh;
+  position: absolute;
+  background: #de111e;
+  z-index: 85;
+}
+
+#id_menu_margin {
+  width: 100%;
+  height: 122px;
+  background: #fff;
+  display: block;
+  left: 0;
+  top: 0;
+}
+
+#id_menu_c2a {
+  padding: 0 20px;
+}
+
+#id_menu_main {
+  background: #fff;
+  padding: 0 20px;
+}
+
+#id_menu_main ul li a {
+  display: block;
+  box-sizing: border-box;
+  padding: 20px 0;
+  line-height: 1em;
+  font-size: 1.1rem;
+  color: #333;
+  border-bottom: 1px solid #de111e;
+}
+
+#id_menu_main ul li:last-child a {
+  border-bottom: none;
+}
+
+#id_menu_main ul li.has-sub a {
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/icons/menu-plus.svg');
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+}
+
+#id_menu_main ul li.has-sub.active a {
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/icons/menu-minus.svg');
+  border-bottom: 1px solid #fff;
+}
+
+#id_menu_main ul li a:hover,
+#id_menu_main ul li.active a {
+}
+
+#id_menu_main ul li ul {
+  display: none;
+  padding-left: 0;
+  margin: 20px 0;
+}
+
+#id_menu_main ul li ul li a {
+  font-size: 1rem;
+  background: none !important;
+  border-bottom: 1px solid #ccc !important;
+}
+
+#id_menu_main ul li ul li a:hover {
+  background: #a0a0a0 !important;
+}
+
+#id_menu_meta {
+  margin: 20px;
+  border-bottom: 1px solid #fff;
+  padding: 30px 0;
+}
+
+#id_menu_meta ul li {
+  margin-bottom: 20px;
+}
+
+#id_menu_meta ul li a {
+  color: #fff;
+}
+
+#id_menu_soacial_media {
+  margin: 20px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------ */
+
+.inner-small,
+.negative-margin {
+  max-width: 380px;
+  margin: auto;
+}
+
+.negative-margin {
+  margin-top: -200px;
+}
+
+.negative-margin .box-head {
+  padding: 0;
+}
+
+.login-form,
+.login-submit {
+  padding: 40px 0 20px 0;
+}
+
+.login-submit,
+.login-submit * {
+  text-align: center;
+}
+
+label {
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='date'],
+input[type='tel'],
+input[type='time'],
+select,
+textarea {
+  box-sizing: border-box;
+  width: 100%;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  padding: 11px;
+  text-align: left !important;
+  background: none;
+  border: 1px solid #757575;
+  color: #757575;
+  margin-bottom: 20px;
+}
+
+select {
+  padding-left: 15px;
+}
+
+select * {
+  color: #757575;
+}
+
+input[type='time']::before {
+  content: 'Uhrzeit: ';
+}
+
+.black input[type='text'],
+.black input[type='password'],
+.black input[type='email'],
+.black input[type='tel'],
+.black input[type='date'],
+.black select,
+.black textarea,
+.red input[type='text'],
+.red input[type='password'],
+.red input[type='email'],
+.red input[type='tel'],
+.red input[type='date'],
+.red select,
+.red textarea {
+  border: 1px solid #fff !important;
+  color: #fff;
+}
+
+input[type='date'] {
+  padding: 7px 10px;
+}
+
+.form-left {
+  float: left;
+  width: 28%;
+  margin-right: 2%;
+}
+
+.form-right {
+  float: left;
+  width: 70%;
+}
+
+form textarea {
+  height: 120px;
+}
+
+.flex-wrapper {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-wrapper * {
+  margin: 0 !important;
+}
+
+a.info {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/icons/info.svg');
+  background-position: center center;
+  background-size: cover;
+  margin-left: 10px !important;
+}
+
+.input-info {
+  position: relative;
+}
+
+label.with-info {
+  width: auto !important;
+  padding-right: 30px !important;
+}
+
+label a.info {
+  position: absolute;
+  right: 0;
+  z-index: 10;
+  width: 22px;
+  height: 22px;
+  top: 2px;
+}
+
+.input-info a.info {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 10;
+}
+
+form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: none;
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/form/select.svg');
+  background-position: right 5px center;
+  background-size: 30px 30px;
+}
+
+.radio-checkbox-wrapper {
+  margin: 5px 0 15px 0;
+}
+
+.centered .radio-checkbox-wrapper {
+  display: inline-block;
+}
+
+.radio-wrapper {
+  margin-bottom: 30px;
+  /*float: left;
+				margin-right: 15px;*/
+}
+
+.radio-checkbox-wrapper.floating .radio-wrapper {
+  float: left;
+  margin: 0 15px 0 0;
+}
+
+.radio-wrapper .radio-checkbox-wrapper {
+  margin: 20px 0 30px 20px;
+}
+
+.radio-checkbox-wrapper label {
+  width: 100%;
+  font-size: 0.9rem;
+  line-height: 1.2em;
+  display: inline-block;
+  position: relative;
+  padding: 5px 0 0 30px;
+  margin: 0 10px 10px 0;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /*float: left;*/
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.space {
+  margin: 20px 0;
+}
+
+input[type='file'] {
+  display: none;
+}
+
+.custom-file-upload {
+  border: none;
+  display: inline-block;
+  padding: 70px 0 0 0;
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/icons/pdf.svg');
+  background-position: top center;
+  background-size: auto 60px;
+  cursor: pointer;
+}
+
+.custom-file-upload .up {
+  border: 1px solid #141416;
+  display: block;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  padding: 10px 20px 8px 20px;
+  line-height: 1em;
+  font-size: 0.9rem;
+}
+
+label a {
+  text-decoration: underline;
+}
+
+.radio-checkbox-wrapper input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.radio-checkbox-wrapper .checkmark {
+  display: block !important;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border: 1px solid #747474;
+  background-color: #fff;
+  transition: 500ms all;
+}
+
+.black .radio-checkbox-wrapper .checkmark,
+.red .radio-checkbox-wrapper .checkmark {
+  background: none;
+  border: 1px solid #fff;
+}
+
+.radio-checkbox-wrapper .checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.radio-checkbox-wrapper input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.radio-checkbox-wrapper .checkmark:after {
+  top: 5px;
+  left: 5px;
+  width: 10px;
+  height: 10px;
+  background: #de111e;
+}
+
+.radio-checkbox-wrapper .checkmark.checkmark-checkbox:after {
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+}
+
+.radio-checkbox-wrapper .checkmark.checkmark-radio,
+.radio-checkbox-wrapper .checkmark.checkmark-radio:after {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+::-webkit-input-placeholder,
+::-webkit-input-placeholder {
+  color: #ccc;
+}
+
+:-ms-input-placeholder,
+:-ms-input-placeholder {
+  color: #ccc;
+}
+
+::placeholder,
+::placeholder {
+  color: #ccc;
+}
+
+.search-box {
+  width: 100%;
+  margin: auto;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.search-box input[type='submit'],
+.search-box input[type='submit']:hover {
+  background: none;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border: none;
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/icons/arrow.svg') !important;
+  background-position: center center !important;
+  background-size: 20px 20px !important;
+}
+
+.info-box {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 2px solid #de111e;
+}
+
+.calender {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  padding: 30px 0 40px 0;
+}
+
+.calender a.day {
+  width: 6.14%;
+  margin: 0 0.5%;
+  display: inline-block;
+  text-align: center;
+}
+
+.calender a.day span {
+  display: block;
+  transition: 500ms all;
+}
+/*
+.calender a.day span.flag
+				{
+				width: 40px;
+				height: 49px;
+				background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/icons/flag-grey.svg');
+				background-position: center center;
+				background-size: cover;
+				color: #FFF;
+				text-align: center;
+				padding: 3px;
+				font-size: .8rem;
+				box-sizing: border-box;
+				}
+*/
+.calender a.day span.balken {
+  width: 100%;
+  height: 200px;
+  background: #757575;
+  margin: 5px 0;
+}
+
+.calender a.day span.info {
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.calender a.day.active span.balken,
+.calender a.day:hover span.balken {
+  background: #de111e;
+}
+
+.calender a.day.active span.info,
+.calender a.day:hover span.info {
+  color: #de111e;
+}
+
+.calender a.day span.flag-wrapper {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  padding-top: 121.6%;
+  position: relative;
+  opacity: 0;
+  transition: 500ms all;
+}
+
+.calender a.day.active span.flag-wrapper,
+.calender a.day.visible span.flag-wrapper {
+  opacity: 1;
+}
+
+.calender a.day span.flag-wrapper .flag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/icons/flag-grey.svg');
+  background-position: center center;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  padding: 3px;
+  font-size: 0.8rem;
+  box-sizing: border-box;
+}
+
+.calender a.day.active span.flag-wrapper .flag,
+.calender a.day:hover span.flag-wrapper .flag {
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/icons/flag-red.svg');
+}
+
+.calender a.day:hover span.flag-wrapper {
+  opacity: 1;
+}
+
+.foldin {
+  padding: 20px 0;
+}
+
+.foldin h3 {
+  margin: 0;
+}
+
+.foldin #id_process_btn {
+  font-size: 1.1rem;
+  padding-right: 30px;
+  font-weight: 700;
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/icons/arrow-down.svg');
+  background-position: right center;
+  background-size: 20px 20px;
+}
+
+.foldin #id_process_btn.active {
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/icons/arrow-top.svg');
+}
+
+/* ------------------------------------------------------------------------------------------------------------ */
+
+.accordeon {
+  list-style: none;
+  padding: 0;
+  margin: 0 !important;
+}
+
+.accordeon li {
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+.accordeon li:last-child {
+  border-bottom: none;
+}
+
+.accordeon li input[type='checkbox'].accordeon-checkbox {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  max-height: 60px;
+  z-index: 1;
+  opacity: 0;
+}
+
+.accordeon.accordeon-with-checkboxes
+  li
+  input[type='checkbox'].accordeon-checkbox {
+  width: 80px;
+  right: 0;
+}
+
+.accordeon.accordeon-with-checkboxes .radio-checkbox-wrapper {
+  margin-bottom: 0;
+}
+
+.accordeon a.accordeon-link {
+  width: 100%;
+  box-sizing: border-box;
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/icons/arrow-top.svg');
+  background-position: right 20px center;
+  background-size: 28px 28px;
+  padding: 15px;
+  background-color: #e3e3e3;
+  display: block;
+  margin-bottom: 0;
+  transition: all 500ms;
+}
+
+.accordeon .accordeon a.accordeon-link {
+  background-color: #f0f0f0;
+  padding-left: 40px;
+}
+
+.lightgrey .accordeon a.accordeon-link,
+.red .accordeon a.accordeon-link,
+.black .accordeon a.accordeon-link {
+  background-color: #fff;
+}
+
+.accordeon div.content {
+  position: relative;
+  overflow: hidden;
+  max-height: 9999px;
+  opacity: 1;
+  transform: translate(0, 0);
+  margin-top: 1px;
+  z-index: 2;
+  transition: all 0.25s ease-in-out;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.15);
+  box-sizing: border-box;
+  margin-bottom: 1px;
+}
+
+.accordeon
+  li
+  input[type='checkbox'].accordeon-checkbox:checked
+  ~ a.accordeon-link {
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/icons/arrow-down.svg');
+}
+
+.accordeon li input[type='checkbox'].accordeon-checkbox:checked ~ div.content {
+  margin-top: 0;
+  max-height: 0;
+  opacity: 0;
+  padding-bottom: 0;
+  transform: translate(0, 50%);
+}
+
+.accordeon div.content div.content-inner {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.accordeon.accordeon-with-checkboxes div.content div.content-inner {
+  padding: 0;
+}
+
+.accordeon.accordeon-with-checkboxes .accordeon div.content div.content-inner {
+  padding: 10px 0 10px 60px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------ */
+
+.ce-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.ce-table tr td {
+  padding: 6px;
+}
+
+.ce-table tr:first-child td {
+  background-color: #141416 !important;
+  color: #fff;
+}
+
+.ce-table tr:nth-child(odd) td {
+  background-color: #fff;
+}
+
+/* ------------------------------------------------------------------------------------------------------------ */
+
+.product {
+  width: 100%;
+  border: 1px solid #fff;
+  padding: 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.product .product-image {
+  width: 32%;
+  margin-right: 2%;
+}
+
+.product .product-text {
+  width: 64%;
+  margin-right: 2%;
+  padding-right: 100px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.product .product-text h4 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.product .product-text * {
+  margin-bottom: 0;
+}
+
+.product .product-actions {
+  width: 100%;
+  padding: 10px 0;
+}
+.product .product-actions .btn {
+  float: left;
+  width: 49% !important;
+  margin: 0 !important;
+}
+
+.product .product-actions select {
+  box-sizing: border-box;
+  float: right;
+  width: 49% !important;
+  margin: 0 !important;
+  background: #fff;
+  color: #141416 !important;
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/form/select-black.svg') !important;
+  background-position: right 5px center;
+  background-size: 30px 30px;
+  padding-right: 50px;
+}
+
+.product .product-actions a.btn {
+  margin: 5px 0;
+  border: 1px solid #141416;
+  color: #141416 !important;
+  background: none;
+}
+
+.product .product-actions a.btn:hover {
+  color: #fff !important;
+  background: #141416;
+}
+
+.red .product .product-actions a.btn {
+  border: 1px solid #fff;
+  color: #fff !important;
+}
+
+.red .product .product-actions a.btn:hover {
+  background: #fff;
+  color: #de111e !important;
+}
+
+.left .product-image,
+.right .product-image {
+  width: 38%;
+  margin-right: 2%;
+  margin-bottom: 20px;
+}
+
+.left .product .product-text,
+.right .product .product-text {
+  width: 58%;
+  margin-right: 2%;
+  margin-bottom: 20px;
+}
+
+.left .product .product-actions h4,
+.right .product .product-actions h4,
+.left .product .product-actions h4 *,
+.right .product .product-actions h4 * {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+label.with-price {
+  padding-right: 60px;
+  width: 100%;
+}
+
+label.with-price .price {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.2rem;
+}
+
+label.with-image {
+  padding-right: 70px;
+  width: 100%;
+}
+
+label.with-image img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------ */
+
+.adress-box {
+  position: relative;
+  float: left;
+  width: 50%;
+  padding-right: 40px;
+  box-sizing: border-box;
+}
+
+.adress-box .edit,
+.adress-box .delete {
+  float: right;
+  width: 30px;
+  height: 30px;
+  display: block;
+  background-position: center center;
+  background-size: cover;
+  margin-right: 10px;
+}
+
+.adress-box p {
+  float: left;
+}
+
+.adress-box .edit {
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/icons/edit.svg');
+}
+
+.adress-box .delete {
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/icons/delete.svg');
+}
+
+.invoice {
+  width: 100%;
+  display: block;
+  background-position: right top;
+  background-size: 40px auto;
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/icons/pdf.svg');
+  padding-right: 50px;
+  box-sizing: border-box;
+}
+
+.invoice p.nr {
+  float: left;
+}
+
+.invoice p.amount {
+  float: right;
+  text-align: right;
+}
+
+.invoice:hover,
+.invoice:hover * {
+  color: #de111e !important;
+}
+
+/* ------------------------------------------------------------------------------------------------------------ */
+
+#id_footer .inner {
+  padding: 25px 0;
+}
+
+#id_footer * {
+  color: #fff;
+  text-align: center;
+  margin: auto;
+}
+
+#id_footer .black {
+  border-top: 1px solid #ccc;
+}
+
+#id_footer a:hover {
+  text-decoration: underline;
+}
+
+#id_footer ul li,
+ul.social-media li {
+  display: inline-block;
+  position: relative;
+  margin: 0 10px;
+}
+
+.social-media {
+  padding: 10px 0 6px 0;
+}
+
+.social-media,
+.social-media * {
+  text-align: center;
+  margin: auto;
+}
+
+.social-media a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-position: center center;
+  background-size: 40px 40px;
+  margin: 0 10px 0 0;
+  transition: all 500ms;
+}
+
+.social-media a:hover {
+  background-size: 34px 34px;
+}
+
+a.xing {
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/social-media/xing.svg');
+}
+
+a.instagram {
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/social-media/instagram.svg');
+}
+
+a.linkedin {
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/social-media/linkedin.svg');
+}
+
+a.youtube {
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/social-media/youtube.svg');
+}
+
+#id_menu_wrapper a.xing {
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/social-media/xing-invert.svg');
+}
+
+#id_menu_wrapper a.instagram {
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/social-media/instagram-invert.svg');
+}
+
+#id_menu_wrapper a.linkedin {
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/social-media/linkedin-invert.svg');
+}
+
+#id_menu_wrapper a.youtube {
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/social-media/youtube-invert.svg');
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #de111e;
+}
+
+.slider {
+  padding: 0 50px;
+}
+
+.slick-next {
+  right: 10px;
+  z-index: 10;
+}
+
+.slick-prev {
+  left: 10px;
+  z-index: 10;
+}
+
+.slick-slider img {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* ------------------------------------------------------------------------------------------------------------ */
+
+.title-status {
+  padding: 30px 0;
+}
+
+.title-status .btn {
+  margin: 0;
+  background: #757575;
+}
+
+.title-status .btn:hover {
+  background: #141416;
+}
+
+.title-status ul {
+  display: inline-block;
+  background-image: url('https://diesdas.codersunlimited.de/diesdas/templates2/images/dots.svg');
+  background-position: center center;
+  background-repeat: repeat-x !important;
+  background-size: 10px 5px;
+}
+
+.step,
+.title-status ul li {
+  display: inline-block;
+  margin: 0 15px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  text-align: center;
+  color: #fff;
+  width: 65px;
+  height: 65px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #bac5cb;
+  padding: 25px 10px;
+  box-sizing: border-box;
+}
+
+.title-status ul li:first-child {
+  margin-left: 0;
+}
+
+.title-status ul li:last-child {
+  margin-right: 0;
+}
+
+.step,
+.title-status ul li.active {
+  background: #de111e;
+}
+
+.step {
+  font-size: 1.6rem;
+  padding-top: 18px;
+}
+
+.step-wrapper {
+  width: 100%;
+  margin-top: -60px;
+  text-align: center;
+}
+
+.title-status h1 {
+  margin: 0;
+}
+
+.box-head,
+.box-head * {
+  text-align: center;
+}
+
+.box-head {
+  padding: 30px 0;
+  position: relative;
+}
+
+.box-head h3 {
+  font-weight: 400;
+}
+
+/* ------------------------------------------------------------------------------------------------------------ */
+
+.teaser-wrapper,
+.boxes-wrapper,
+.logos-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 102%;
+  margin-left: -1%;
+}
+
+.teaser-wrapper a.teaser,
+.boxes-wrapper .box {
+  width: 31.33%;
+  margin: 0 1% 30px 1%;
+}
+
+.teaser-wrapper a.teaser img {
+  margin: 0 0 10px 0;
+  width: 100%;
+  height: auto;
+}
+
+.teaser-wrapper a.teaser span {
+  display: block;
+  text-align: center;
+}
+
+.boxes-wrapper .box {
+  box-sizing: border-box;
+  background: #de111e;
+  padding: 30px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.boxes-wrapper .box * {
+  color: #fff;
+}
+
+.boxes-wrapper .box span {
+  display: block;
+  padding-bottom: 50px;
+  font-size: 1.2rem;
+}
+
+.boxes-wrapper .box a {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.boxes-wrapper .box a:hover {
+  color: #000;
+}
+
+.logos-wrapper .logo {
+  width: 23%;
+  margin: 0 1% 30px 1%;
+}
+
+.logos-wrapper .logo h2 {
+  margin: 0;
+}
+
+.logos-wrapper .logo .logo-image {
+  background: #f0f0f0;
+  text-align: center;
+  padding: 50px 0;
+  margin-bottom: 20px;
+}
+
+.logos-wrapper .logo img {
+  max-height: 40px;
+  margin: auto;
+}
+
+/* ------------------------------------------------------------------------------------------------------------ */
+
+@media screen and (max-width: 1260px) {
+  .inner {
+    width: 96%;
+    padding: 40px 2% 20px 2%;
+  }
+
+  .product .product-actions a.btn {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .inner.bg {
+    background-image: none;
+  }
+
+  .only-mobile {
+    display: block !important;
+  }
+
+  .not-mobile {
+    display: none !important;
+  }
+
+  .inner.title #id_title_image img {
+    max-width: 80px;
+  }
+
+  .box-head {
+    padding: 0;
+  }
+
+  .module.module-margin {
+    padding: 40px 0;
+  }
+
+  .boxed {
+    padding: 30px 20px;
+  }
+
+  #id_page,
+  #id_content,
+  #id_footer,
+  .left,
+  .right,
+  .left-2-3,
+  .right-1-3,
+  .left-3-5,
+  .right-2-5,
+  .left-1-3,
+  .right-2-3,
+  .adress-box {
+    display: block;
+    float: none !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .inner-intended,
+  .inner-extra-intended {
+    max-width: 100%;
+  }
+
+  .left,
+  .right,
+  .left-2-3,
+  .right-1-3,
+  .left-3-5,
+  .right-2-5,
+  .left-1-3,
+  .right-2-3 {
+    margin-bottom: 20px;
+  }
+
+  .module {
+    width: 100%;
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .module.full {
+    padding: 0;
+  }
+
+  .teaser-wrapper a.teaser {
+    width: 31.33%;
+  }
+
+  .evaluate .left,
+  .evaluate .left *,
+  .evaluate .right {
+    text-align: center;
+  }
+
+  .module.header .header-content {
+    padding: 40px 0;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  h1,
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+  }
+
+  #id_menu_margin {
+    height: 95px;
+  }
+
+  #id_menu_c2a {
+    padding: 0;
+  }
+
+  #id_menu_inner {
+    width: 100%;
+  }
+
+  .negative-margin {
+    margin-top: -120px;
+  }
+
+  .teaser-wrapper a.teaser {
+    width: 48%;
+  }
+
+  .form-left,
+  .form-right {
+    float: none;
+    width: 100%;
+  }
+
+  #id_header #id_ci a {
+    width: 140px;
+    height: 31px;
+  }
+
+  .teaser-wrapper a.teaser span {
+    font-size: 0.8rem;
+  }
+
+  .slider-nav {
+    margin: 0 0 50px 0;
+  }
+
+  .login-form,
+  .login-submit,
+  .selection-wrapper {
+    max-width: 100%;
+  }
+
+  .inner {
+    width: 90%;
+    padding: 40px 5% 20px 5%;
+  }
+
+  #id_menu_wrapper .inner {
+    padding: 20px 5%;
+  }
+
+  #id_menu_wrapper ul li ul {
+    padding-left: 10px;
+    margin-bottom: 20px;
+  }
+
+  #id_menu_wrapper ul li a {
+    font-size: 1.2rem !important;
+  }
+
+  #id_menu_wrapper ul li ul li a {
+    font-size: 1rem !important;
+  }
+
+  .product {
+    align-items: flex-start;
+  }
+
+  .product .product-image {
+    width: 100%;
+    margin: 0 0 20px 0;
+    float: none;
+  }
+
+  .product .product-text {
+    width: 100%;
+    margin: 0 0 10px 0;
+    float: none;
+  }
+
+  .product .product-text {
+    padding: 0 0 40px 0;
+  }
+
+  .product .product-actions {
+    width: 100%;
+  }
+
+  .product .product-actions,
+  .product .product-actions * {
+    text-align: left;
+  }
+
+  .product .product-actions .btn {
+    float: left;
+    width: 49% !important;
+  }
+
+  .product .product-actions .btn:nth-child(odd) {
+    margin-right: 1%;
+  }
+
+  .product .product-actions .btn:nth-child(even) {
+    margin-left: 1%;
+  }
+
+  /*		
+	.product .product-actions .btn:nth-child(even)
+				{
+				float: right;
+				}
+	*/
+  .product .product-actions a.btn {
+    width: auto;
+    margin: 10px 0 0 0;
+    padding: 10px 15px;
+  }
+
+  .calender a.day span.flag-wrapper .flag {
+    padding: 2px;
+    font-size: 0.7rem;
+  }
+
+  select {
+    padding: 9px;
+  }
+
+  .boxed.more-margin .box-head {
+    padding-top: 30px;
+  }
+
+  .header-actions,
+  .boxes-wrapper {
+    display: block;
+  }
+
+  .header-actions .btn {
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+
+  .icon-wrapper div {
+    width: 48%;
+    padding: 20px 0 20px 50px;
+  }
+
+  .news-image,
+  .news-content {
+    width: 100%;
+    float: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+  }
+
+  .boxes-wrapper .box {
+    width: 100%;
+    float: none;
+    padding: 20px;
+    margin: 0 0 20px 0;
+  }
+
+  .highligh-box {
+    padding: 20px 20px 220px 20px;
+  }
+
+  .highligh-box img {
+    width: 80%;
+    margin: 0 0 0 20%;
+  }
+
+  .logos-wrapper .logo {
+    width: 48%;
+  }
+
+  #id_header #id_menu {
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .inner.title #id_title_image img {
+    width: 48px;
+  }
+
+  .calender a.day span.flag-wrapper .flag {
+    padding: 0;
+    font-size: 0.575rem;
+    letter-spacing: -0.1em;
+  }
+
+  .inner.title h1 {
+    padding-right: 60px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #id_header #id_ci {
+    width: 40%;
+    padding-top: 5px;
+  }
+
+  #id_header #id_menu {
+    width: 60%;
+  }
+
+  #id_header #id_ci a {
+    width: 100px;
+    height: 22px;
+  }
+}
+
+/*
+Extra
+*/
+
+.less,
+.less::after {
+  line-height: 1em;
+  padding: 5px 36px 5px 0;
+  display: inline-block;
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 26px 26px;
+}
+
+.less::after {
+  content: 'V';
+  color: transparent;
+}
+
+.less::after {
+  background-image: url('assets/images/icons/arrow-down.svg');
+  transform: rotate(180deg);
+  margin-left: 10px;
+}
+
+.red .less::after {
+  background-image: url('assets/images/icons/arrow-down-white.svg');
+}
+
+.rating-stars ul {
+  list-style-type: none;
+  padding: 0;
+
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+.rating-stars ul > li.star {
+  display: inline-block;
+}
+.rating-stars ul > li.star > i.fa {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-position: center bottom;
+  background-size: cover;
+  background-image: url('assets/images/icons/star-grey.svg');
+}
+
+.rating-stars ul > li.star.hover > i.fa {
+  background-image: url('assets/images/icons/star-red.svg');
+}
+
+.rating-stars ul > li.star.selected > i.fa {
+  background-image: url('assets/images/icons/star-red.svg');
+}
+
+#vergangen a,
+#aktuell a,
+#loadmorebutton a {
+  cursor: pointer;
+}
+
+#id_modal_delete form input[type='submit']:first-child,
+.middle-space-btn {
+  margin-left: -10px;
+  margin-right: 20px;
+}
+
+.plusright {
+  margin-left: 30px;
+}
+
+.pointi {
+  cursor: pointer;
+}
+
+section.last-resort {
+  width: 100%;
+  margin-top: 20px;
+}
+
+section.last-resort .helpline {
+  font-size: max(3vw, 30px);
+}
+
+img.eastern {
+  height: 40px;
+  float: right;
+}
+
+.width {
+  width: 100%;
+}
+
+#miethistorie_vergangen2 {
+  background: #d9d9d9;
+}
+
+.accordeon li input[type='checkbox'] {
+  width: auto;
+}
+
+.detail.accordeon li input[type='checkbox'] {
+  width: 100%;
+}
+.Bewertung-Single {
+  border: 1px solid black;
+}
+
+.Bewertung-Single:hover {
+  cursor: pointer;
+}
+
+.debug_menue {
+  width: 100%;
+  position: fixed;
+  z-index: 99999999999999999999;
+  background-color: grey;
+  border-radius: 0 0 20px 20px;
+  padding: 10px;
+  top: -10px;
+  transition: 500ms;
+}
+
+.debug_menue a {
+  margin: 10px;
+}
+
+.debug_menue .bugreport {
+  margin: 10px;
+  background-color: lightgrey;
+  padding: 10px;
+  border-radius: 20px;
+  opacity: 0;
+  display: none;
+  transition: 500ms;
+}
+
+.debug_menue .bugframe {
+  width: 100%;
+  position: absolute;
+}
+
+.debug_menue .bug2 {
+  background-color: grey;
+  position: relative;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  top: -8px;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+  left: 49%;
+  right: 49%;
+  transition: 500ms;
+}
+
+.debug_menue input,
+.debug_menue textarea {
+  background: #fff;
+}
+
+.debug_menue .bug2:hover {
+  background-color: lightgray;
+}
+
+#produkte .product,
+#featured .product,
+#not-that-featured .product,
+#outlet .product {
+  border: 1px solid black;
+}
+
+*[name='Alinas super toller roter Button']:hover {
+  -webkit-animation: rainbow 1s 5s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+}
+
+@-webkit-keyframes rainbow {
+  /*
+  from {
+    box-shadow: 0 0 0em #ff0000, 0 0 0em #ff7f00, 0 0 0em #ffff00,
+      0 0 0em #00ff00, 0 0 0em #0000ff, 0 0 0em #4b0082, 0 0 0em #8f00ff;
+  }
+  */
+  15% {
+    box-shadow: 0 0 1em #8f00ff, 0 0 2em #ff0000, 0 0 3em #ff7f00,
+      0 0 4em #ffff00, 0 0 5em #00ff00, 0 0 6em #0000ff, 0 0 7em #4b0082;
+  }
+  30% {
+    box-shadow: 0 0 1em #4b0082, 0 0 2em #8f00ff, 0 0 3em #ff0000,
+      0 0 4em #ff7f00, 0 0 5em #ffff00, 0 0 6em #00ff00, 0 0 7em #0000ff;
+  }
+  45% {
+    box-shadow: 0 0 1em #0000ff, 0 0 2em #4b0082, 0 0 3em #8f00ff,
+      0 0 4em #ff0000, 0 0 5em #ff7f00, 0 0 6em #ffff00, 0 0 7em #00ff00;
+  }
+  60% {
+    box-shadow: 0 0 1em #00ff00, 0 0 2em #0000ff, 0 0 3em #4b0082,
+      0 0 4em #8f00ff, 0 0 5em #ff0000, 0 0 6em #ff7f00, 0 0 7em #ffff00;
+  }
+  75% {
+    box-shadow: 0 0 1em #ffff00, 0 0 2em #00ff00, 0 0 3em #0000ff,
+      0 0 4em #4b0082, 0 0 5em #8f00ff, 0 0 6em #ff0000, 0 0 7em #ff7f00;
+  }
+  90% {
+    box-shadow: 0 0 1em #ff7f00, 0 0 2em #ffff00, 0 0 3em #00ff00,
+      0 0 4em #0000ff, 0 0 5em #4b0082, 0 0 6em #8f00ff, 0 0 7em #ff0000;
+  }
+  /*
+  to {
+    box-shadow: 0 0 1em #ff0000, 0 0 2em #ff7f00, 0 0 3em #ffff00,
+      0 0 4em #00ff00, 0 0 5em #0000ff, 0 0 6em #4b0082, 0 0 7em #8f00ff;
+  }
+  */
+}
+
+a {
+  cursor: pointer;
+}
+
+.tableframe th,
+.tableframe td {
+  border: 1px solid black;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.tableframe th {
+  background: #de111e;
+}
+
+.tableframe tr {
+  background: grey;
+}
+
+.tableframe tr:nth-child(odd) {
+  background: lightgrey;
+}
+
+.tableframe {
+  overflow: auto;
+}
+
+select option {
+  color: black !important;
+}
+
+#id_wo_lieferung2 .adress-box {
+  border: 1px solid black;
+  margin: 10px;
+  padding: 5px;
+  position: relative;
+  display: inline-block;
+}
+
+#id_wo_lieferung2 .adress-box p {
+  width: clamp(min-content, 90%, 800px);
+  width: max(min-content, min(90%, 800px));
+  width: 40%;
+  max-width: 800px;
+  min-width: min-content;
+}
+
+#id_wo_lieferung2 .adress-box input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  top: calc(50% - 10px);
+  height: 20px;
+  width: 20px;
+  right: 10px;
+  z-index: 9999;
+}
+
+#id_wo_lieferung2 .adress-box .checkmark {
+  display: block !important;
+  position: absolute;
+  top: calc(50% - 10px);
+  height: 20px;
+  width: 20px;
+  right: 10px;
+  border: 1px solid #747474;
+  background-color: #fff;
+  transition: 500ms all;
+}
+
+.black #id_wo_lieferung2 .adress-box .checkmark,
+.red #id_wo_lieferung2 .adress-box .checkmark {
+  background: none;
+  border: 1px solid #fff;
+}
+
+#id_wo_lieferung2 .adress-box .checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+#id_wo_lieferung2 .adress-box input:checked ~ .checkmark:after {
+  display: block;
+}
+
+#id_wo_lieferung2 .adress-box .checkmark:after {
+  top: 5px;
+  left: 5px;
+  width: 10px;
+  height: 10px;
+  background: #de111e;
+}
+
+#id_wo_lieferung2 .adress-box .checkmark.checkmark-checkbox:after {
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+}
+
+#id_wo_lieferung2 .adress-box .checkmark.checkmark-radio,
+#id_wo_lieferung2 .adress-box .checkmark.checkmark-radio:after {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.range-ausgabe {
+  float: right;
+}
+
+input[type='range'] {
+  box-sizing: border-box;
+  width: 100%;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 1px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  margin-bottom: 30px;
+}
+
+input[type='range']:hover {
+  opacity: 1;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #de111e;
+  cursor: pointer;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+input[type='range']::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #de111e;
+  cursor: pointer;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+#id_menu_wrapper {
+  z-index: 3147483644;
+}
+
+.slider-wrapper {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.selection-slider {
+  height: 6px !important;
+  margin-bottom: 10px;
+}
+
+.selection-slider .noUi-connect/*,
+.selection-slider .noUi-base*/ {
+  background: #de111e !important;
+  -webkit-border-radius: 10px !important;
+  -moz-border-radius: 10px !important;
+  border-radius: 10px !important;
+}
+
+.selection-slider .noUi-handle {
+  opacity: 0.7;
+  height: 25px !important;
+  width: 25px !important;
+  top: -10px !important;
+  right: 0px !important;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+  box-shadow: none !important;
+  background: #de111e !important;
+}
+
+.selection-slider .noUi-handle:before,
+.selection-slider .noUi-handle:after {
+  display: none;
+}
+
+.selection-slider-value {
+  font-size: 0.8rem;
+}
+
+.selection-slider-value-left {
+  width: 50%;
+  float: left;
+}
+
+.selection-slider-value-right {
+  width: 50%;
+  float: right;
+  text-align: right;
+}
+
+/*Insert Style here*/
+
+.range-ausgabe {
+  float: right;
+}
+
+input[type='range'] {
+  box-sizing: border-box;
+  width: 100%;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 1px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  margin-bottom: 30px;
+}
+
+input[type='range']:hover {
+  opacity: 1;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #de111e;
+  cursor: pointer;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+input[type='range']::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #de111e;
+  cursor: pointer;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+#id_menu_wrapper {
+  z-index: 31474836442147483647;
+}
+
+.product {
+  align-items: center;
+}
+
+.product .product-image {
+  width: 22%;
+  margin-right: 2%;
+}
+
+.product .product-text {
+  width: 38%;
+  margin-right: 2%;
+}
+
+.product .product-actions {
+  width: 36%;
+  text-align: right;
+}
+
+@media screen and (max-width: 768px) {
+  .product {
+    align-items: flex-start;
+  }
+
+  .product .product-image {
+    width: 100%;
+    margin: 0 0 20px 0;
+    float: none;
+  }
+
+  .product .product-text {
+    width: 100%;
+    margin: 0 0 10px 0;
+    float: none;
+  }
+
+  .product .product-text {
+    padding: 0 0 40px 0;
+  }
+
+  .product .product-actions {
+    width: 100%;
+  }
+}
+
+.stars {
+  padding-left: 100px;
+  background-position: left center;
+  background-size: 90px auto;
+  display: inline-block;
+}
+
+.stars.stars-1 {
+  background-image: url('/geraete-mieten/images/icons/stars-1.svg');
+}
+
+.stars.stars-2 {
+  background-image: url('/geraete-mieten/images/icons/stars-2.svg');
+}
+
+.stars.stars-3 {
+  background-image: url('/geraete-mieten/images/icons/stars-3.svg');
+}
+
+.stars.stars-4 {
+  background-image: url('/geraete-mieten/images/icons/stars-4.svg');
+}
+
+.stars.stars-5 {
+  background-image: url('/geraete-mieten/images/icons/stars-5.svg');
+}
+
+.Bewertung-Single {
+  border: none;
+  background: #fff;
+}
+
+.Bewertung-Single em {
+  font-size: 0.9rem;
+  color: #ccc;
+  font-style: normal;
+}
+
+.Bewertung-Single p {
+  font-style: italic;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.Bewertung-Single .product {
+  margin: 0 0 10px 0;
+}
+
+.datenblatt {
+  display: inline-block;
+  background-image: url('/geraete-mieten/images/icons/pdf.svg');
+  padding: 15px 0 15px 60px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 50px;
+  font-weight: 700;
+  color: #de111e;
+}
+
+.video-wrapper {
+  width: 100%;
+  position: relative;
+  padding-top: 56.25%;
+  height: 0;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 30px;
+}
+
+.video-wrapper video,
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+}
+
+#id_c2a {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+  box-sizing: border-box;
+  padding: 20px 0;
+  background: rgba(186, 197, 203, 0.9);
+  z-index: 9999;
+  text-align: center;
+  transition: all 1000ms;
+}
+/*
+.reduced #id_c2a
+				{
+				top:0;
+				}
+*/
+#id_c2a a {
+  margin: 0;
+}
+
+#id_footer .red {
+  padding-bottom: 80px;
+}
+
+/*
+#id_content
+				{
+				background: #f4f4f4;
+				}
+*/
+
+.adress-box {
+  margin: 0 10px 10px 0 !important;
+  padding: 10px !important;
+  box-sizing: border-box;
+  border: none !important;
+  background: #f4f4f4;
+}
+
+.adress-box p {
+  text-align: left;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.tableframe table,
+.contenttable {
+  border-collapse: collapse;
+}
+
+.tableframe table *,
+.contenttable * {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.tableframe table th,
+.contenttable th {
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.tableframe table td,
+.contenttable td {
+  border: 1px solid #fff;
+}
+
+.tableframe table tr:nth-child(even),
+.contenttable tr:nth-child(even) {
+  background: #fff;
+}
+
+.tableframe table tr:nth-child(odd),
+.contenttable tr:nth-child(odd) {
+  background: #f4f4f4;
+}
+
+/* Doppelslider Start */
+.slider-wrapper {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.selection-slider {
+  height: 6px !important;
+  margin-bottom: 10px;
+}
+
+.selection-slider .noUi-connect/*,
+.selection-slider .noUi-base*/ {
+  background: #de111e !important;
+  -webkit-border-radius: 10px !important;
+  -moz-border-radius: 10px !important;
+  border-radius: 10px !important;
+}
+
+.selection-slider .noUi-handle {
+  height: 18px !important;
+  width: 18px !important;
+  top: -7px !important;
+  right: -9px !important;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+  box-shadow: none !important;
+  background: #de111e !important;
+}
+
+.selection-slider .noUi-handle:before,
+.selection-slider .noUi-handle:after {
+  display: none;
+}
+
+.selection-slider-value {
+  font-size: 0.8rem;
+}
+
+.selection-slider-value-left {
+  width: 50%;
+  float: left;
+}
+
+.selection-slider-value-right {
+  width: 50%;
+  float: right;
+  text-align: right;
+}
+
+/*
+Doppelslider Ende
+*/
+#id_main_slider .slick-slide img,
+#slider-nav .slick-slide img {
+  width: 100%;
+  aspect-ratio: 1280 / 854;
+  object-fit: contain;
+
+}
+.white {
+  background: white;
+}
+#id_menu_main ul li ul {
+  margin: 20px -20px;
+}
+
+#id_menu_main ul li li a {
+  padding: 20px 40px;
+}
+
+#id_menu_main ul li ul li a:hover {
+  background: #f0f0f0 !important;
+}
+
+#debug_menue {
+
+}
