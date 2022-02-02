@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
 import { Felder, felder } from '../../fields';
@@ -22,7 +22,7 @@ declare var $: any;
   templateUrl: './produktdetailseite.component.html',
   styleUrls: ['./produktdetailseite.component.css'],
 })
-export class ProduktdetailseiteComponent implements OnInit {
+export class ProduktdetailseiteComponent implements OnInit, AfterViewInit {
   produktid: string = 'toastbrot';
   Produkt: any;
   allowed = false;
@@ -99,6 +99,31 @@ export class ProduktdetailseiteComponent implements OnInit {
       console.log('ZEIT GEFUNDEN');
       this.dest = '/mietprozess/auswahl/';
     }
+  }
+ //New Code
+  ngAfterViewInit(): void {
+      
+        $('.slider-nav').on('init', function (slick) {
+            console.log('fired!');
+            $('.slider-nav').fadeIn(1000);
+          }).slick({
+         infinite: true,
+         slidesToShow: 4,
+         slidesToScroll: 3,
+        });
+
+    $('.slider').on('init', function (slick) {
+        console.log('fired!');
+        $('.slider').fadeIn(1000);
+      }).slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        fade: true
+      });
+
+     
+      
   }
   overdrive3(): string {
     var url = window.location;
@@ -212,6 +237,9 @@ export class ProduktdetailseiteComponent implements OnInit {
   }
 
   reloadSlider(images: Array<string>) {
+    $('.slider').slick('unslick');
+    $('.slider-nav').slick('unslick');
+
     var slider = document.getElementById('id_main_slider');
     var slider_nav = document.getElementById('slider-nav');
     slider_nav.innerHTML = '';
@@ -421,6 +449,8 @@ export class ProduktdetailseiteComponent implements OnInit {
       console.log(link);
       //window.location.href = link;
     }
+    $('.slider').slick('reinit');
+    $('.slider-nav').slick('reinit');
     $(function () {
       $(window)
         .scroll(function () {
@@ -474,23 +504,33 @@ export class ProduktdetailseiteComponent implements OnInit {
         }
       });
 
+
+//New Code
       $('.slider-nav a').click(function () {
         console.log('2');
-        $('#id_main_slider').slick(
+        $('.slider').on('init', function (slick) {
+          console.log('fired!');
+          $('.slider').fadeIn(1000);
+        }).slick(
           'slickGoTo',
           $(this).attr('data-slide'),
-          false
+          false,
+          { lazyLoad: 'ondemand' }
         );
       });
     });
     if ($('.slider').length > 0) {
       console.log('1', $('.slider').length);
-      $('.slider').slick({
+      $('.slider').on('init', function (slick) {
+        console.log('fired!');
+        $('.slider').fadeIn(1000);
+      }).slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: true,
         fade: true,
-        infinite: true,
+        lazyLoad: 'ondemand'
+        //asNavFor: '.slider-nav'
       });
       console.log('3');
 
@@ -501,11 +541,12 @@ export class ProduktdetailseiteComponent implements OnInit {
          slidesToScroll: 3,
         });
        });
-       
-      if ($(window).width() < 768) {
-        $('.slider-nav').appendTo('.slider');
-      }
-    }
+
+  if ($(window).width() < 768) {
+    $('.slider-nav').appendTo('.slider');
+  }
+}
+  
     $('#stars li')
       .on('mouseover', function () {
         var onStar = parseInt($(this).data('value'), 10);
